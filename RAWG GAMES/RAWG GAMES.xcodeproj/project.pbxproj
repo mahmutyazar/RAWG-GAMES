@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F329749E3B00C44A56 /* AppDelegate.swift */; };
 		2A8798F629749E3B00C44A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F529749E3B00C44A56 /* SceneDelegate.swift */; };
-		2A8798F829749E3B00C44A56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F729749E3B00C44A56 /* ViewController.swift */; };
+		2A8798F829749E3B00C44A56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F729749E3B00C44A56 /* HomeViewController.swift */; };
 		2A8798FB29749E3B00C44A56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8798F929749E3B00C44A56 /* Main.storyboard */; };
 		2A8798FE29749E3B00C44A56 /* RAWG_GAMES.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798FC29749E3B00C44A56 /* RAWG_GAMES.xcdatamodeld */; };
 		2A87990029749E3E00C44A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8798FF29749E3E00C44A56 /* Assets.xcassets */; };
@@ -17,6 +17,10 @@
 		2A87990E29749E3E00C44A56 /* RAWG_GAMESTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87990D29749E3E00C44A56 /* RAWG_GAMESTests.swift */; };
 		2A87991829749E3E00C44A56 /* RAWG_GAMESUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87991729749E3E00C44A56 /* RAWG_GAMESUITests.swift */; };
 		2A87991A29749E3E00C44A56 /* RAWG_GAMESUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87991929749E3E00C44A56 /* RAWG_GAMESUITestsLaunchTests.swift */; };
+		2A87992E2974A55600C44A56 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87992D2974A55600C44A56 /* DetailViewController.swift */; };
+		2A8799302974A57B00C44A56 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87992F2974A57B00C44A56 /* FavoritesViewController.swift */; };
+		2A8799322974A59200C44A56 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8799312974A59200C44A56 /* NotesViewController.swift */; };
+		2A8799342974A5B100C44A56 /* NotTakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8799332974A5B100C44A56 /* NotTakeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,7 @@
 		2A8798F029749E3B00C44A56 /* RAWG GAMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAWG GAMES.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8798F329749E3B00C44A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A8798F529749E3B00C44A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A8798F729749E3B00C44A56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2A8798F729749E3B00C44A56 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2A8798FA29749E3B00C44A56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A8798FD29749E3B00C44A56 /* RAWG_GAMES.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RAWG_GAMES.xcdatamodel; sourceTree = "<group>"; };
 		2A8798FF29749E3E00C44A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		2A87991329749E3E00C44A56 /* RAWG GAMESUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RAWG GAMESUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A87991729749E3E00C44A56 /* RAWG_GAMESUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAWG_GAMESUITests.swift; sourceTree = "<group>"; };
 		2A87991929749E3E00C44A56 /* RAWG_GAMESUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAWG_GAMESUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2A87992D2974A55600C44A56 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2A87992F2974A57B00C44A56 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		2A8799312974A59200C44A56 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		2A8799332974A5B100C44A56 /* NotTakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTakeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +109,9 @@
 		2A8798F229749E3B00C44A56 /* RAWG GAMES */ = {
 			isa = PBXGroup;
 			children = (
+				2A8799262974A40E00C44A56 /* Modules */,
 				2A8798F329749E3B00C44A56 /* AppDelegate.swift */,
 				2A8798F529749E3B00C44A56 /* SceneDelegate.swift */,
-				2A8798F729749E3B00C44A56 /* ViewController.swift */,
 				2A8798F929749E3B00C44A56 /* Main.storyboard */,
 				2A8798FF29749E3E00C44A56 /* Assets.xcassets */,
 				2A87990129749E3E00C44A56 /* LaunchScreen.storyboard */,
@@ -128,6 +136,58 @@
 				2A87991929749E3E00C44A56 /* RAWG_GAMESUITestsLaunchTests.swift */,
 			);
 			path = "RAWG GAMESUITests";
+			sourceTree = "<group>";
+		};
+		2A8799262974A40E00C44A56 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2A8799272974A41900C44A56 /* Home Screen */,
+				2A87992B2974A48200C44A56 /* Detail Screen */,
+				2A8799292974A44400C44A56 /* Favorites Screen */,
+				2A87992A2974A45300C44A56 /* Notes Screen */,
+				2A87992C2974A4AE00C44A56 /* Note Take Screen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2A8799272974A41900C44A56 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2A8798F729749E3B00C44A56 /* HomeViewController.swift */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		2A8799292974A44400C44A56 /* Favorites Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2A87992F2974A57B00C44A56 /* FavoritesViewController.swift */,
+			);
+			path = "Favorites Screen";
+			sourceTree = "<group>";
+		};
+		2A87992A2974A45300C44A56 /* Notes Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2A8799312974A59200C44A56 /* NotesViewController.swift */,
+			);
+			path = "Notes Screen";
+			sourceTree = "<group>";
+		};
+		2A87992B2974A48200C44A56 /* Detail Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2A87992D2974A55600C44A56 /* DetailViewController.swift */,
+			);
+			path = "Detail Screen";
+			sourceTree = "<group>";
+		};
+		2A87992C2974A4AE00C44A56 /* Note Take Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2A8799332974A5B100C44A56 /* NotTakeViewController.swift */,
+			);
+			path = "Note Take Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +322,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8798FE29749E3B00C44A56 /* RAWG_GAMES.xcdatamodeld in Sources */,
-				2A8798F829749E3B00C44A56 /* ViewController.swift in Sources */,
+				2A8798F829749E3B00C44A56 /* HomeViewController.swift in Sources */,
+				2A87992E2974A55600C44A56 /* DetailViewController.swift in Sources */,
+				2A8799342974A5B100C44A56 /* NotTakeViewController.swift in Sources */,
+				2A8799322974A59200C44A56 /* NotesViewController.swift in Sources */,
 				2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */,
+				2A8799302974A57B00C44A56 /* FavoritesViewController.swift in Sources */,
 				2A8798F629749E3B00C44A56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
