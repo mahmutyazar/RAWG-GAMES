@@ -19,9 +19,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="Iry-Rz-5la" kind="relationship" relationship="viewControllers" id="HU8-1T-95a"/>
                         <segue destination="jCh-cH-MqF" kind="relationship" relationship="viewControllers" id="H9h-6I-DJK"/>
                         <segue destination="D6N-qe-hph" kind="relationship" relationship="viewControllers" id="JQK-zY-5ff"/>
-                        <segue destination="Iry-Rz-5la" kind="relationship" relationship="viewControllers" id="HU8-1T-95a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEB-1a-blB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -98,6 +98,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Games" id="CQP-pa-DQP"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="KsD-LP-N6h" id="TYd-yR-4A9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
