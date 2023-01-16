@@ -43,7 +43,7 @@ extension HomeTableViewHelper: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.itemPressed(indexPath.row)
-        print(items[indexPath.row].name)
+        
     }
     
 }
