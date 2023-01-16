@@ -100,6 +100,7 @@
                     <navigationItem key="navigationItem" title="Games" id="CQP-pa-DQP"/>
                     <connections>
                         <outlet property="homeTableView" destination="KsD-LP-N6h" id="TYd-yR-4A9"/>
+                        <segue destination="L3N-5E-6YZ" kind="show" identifier="toDetailsVC" id="Fcw-B2-zw1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -116,6 +117,7 @@
                         <viewLayoutGuide key="safeArea" id="sh1-O9-YTL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cHe-Wn-uUd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3L-PO-XAC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
