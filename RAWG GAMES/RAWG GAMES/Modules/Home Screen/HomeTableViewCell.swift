@@ -5,29 +5,41 @@
 //  Created by Mahmut Yazar on 16.01.2023.
 //
 
+import Foundation
 import UIKit
+import Kingfisher
 
 class HomeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var gameImageView: UIImageView!
+    @IBOutlet weak var gameNameLabel: UILabel!
+    
+    @IBOutlet weak var releasedLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    
+    @IBOutlet weak var genreLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        gameImageView.clipsToBounds = true
+        gameImageView.layer.cornerRadius = 12
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(with model: HomeCellModel) {
+        gameImageView.kf.setImage(with: URL.init(string: model.backgroundImage))
+        gameNameLabel.text = model.name
+        releasedLabel.text = model.released.prefix(4).description
+        ratingLabel.text = "\(model.rating)/\(model.ratingTop)"
+        genreLabel.text = model.genre.map{ element in element.name ?? ""}.joined(separator: ",")
     }
-    
 }
 
 struct HomeCellModel {
-    
+    let id: Int
     let name: String
     let backgroundImage: String
     let released: String
     let rating: Double
-    
-    
+    let ratingTop: Int
+    let genre: [Genre]
 }

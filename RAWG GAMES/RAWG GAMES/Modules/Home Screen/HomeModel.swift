@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 protocol HomeModelProtocol: AnyObject {
     func didDataFetch()
@@ -15,9 +16,11 @@ protocol HomeModelProtocol: AnyObject {
 
 class HomeModel {
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     let apiKey: String = "ed862e3ef473469890abd5142066f509"
     
-    private var data: [Result] = []
+    private(set) var data: [Result] = []
     
     weak var delegate: HomeModelProtocol?
     
@@ -26,6 +29,7 @@ class HomeModel {
         AF.request("https://api.rawg.io/api/games?key=\(apiKey)").responseDecodable(of: ApiGame.self) { game in
             guard let response = game.value else {
                 self.delegate?.didDataCouldntFetch()
+                print("veri yok")
                 return
             }
             self.data = response.results ?? []
