@@ -12,6 +12,9 @@
 		2A35071F29752EC600435C28 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35071E29752EC600435C28 /* HomeModel.swift */; };
 		2A35072129752EE900435C28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35072029752EE900435C28 /* HomeViewModel.swift */; };
 		2A3507232975333B00435C28 /* Service Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3507222975333B00435C28 /* Service Model.swift */; };
+		2A35073129754E4400435C28 /* HomeTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35073029754E4400435C28 /* HomeTableViewHelper.swift */; };
+		2A35073429754E5D00435C28 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35073229754E5D00435C28 /* HomeTableViewCell.swift */; };
+		2A35073529754E5D00435C28 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A35073329754E5D00435C28 /* HomeTableViewCell.xib */; };
 		2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F329749E3B00C44A56 /* AppDelegate.swift */; };
 		2A8798F629749E3B00C44A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F529749E3B00C44A56 /* SceneDelegate.swift */; };
 		2A8798F829749E3B00C44A56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F729749E3B00C44A56 /* HomeViewController.swift */; };
@@ -49,6 +52,9 @@
 		2A35071E29752EC600435C28 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		2A35072029752EE900435C28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2A3507222975333B00435C28 /* Service Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Model.swift"; sourceTree = "<group>"; };
+		2A35073029754E4400435C28 /* HomeTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewHelper.swift; sourceTree = "<group>"; };
+		2A35073229754E5D00435C28 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		2A35073329754E5D00435C28 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		2A8798F029749E3B00C44A56 /* RAWG GAMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAWG GAMES.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8798F329749E3B00C44A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A8798F529749E3B00C44A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 				2A35071E29752EC600435C28 /* HomeModel.swift */,
 				2A35072029752EE900435C28 /* HomeViewModel.swift */,
 				2A8798F729749E3B00C44A56 /* HomeViewController.swift */,
+				2A35073029754E4400435C28 /* HomeTableViewHelper.swift */,
+				2A35073229754E5D00435C28 /* HomeTableViewCell.swift */,
+				2A35073329754E5D00435C28 /* HomeTableViewCell.xib */,
 				2A3507222975333B00435C28 /* Service Model.swift */,
 			);
 			path = "Home Screen";
@@ -317,6 +326,7 @@
 			files = (
 				2A87990329749E3E00C44A56 /* LaunchScreen.storyboard in Resources */,
 				2A87990029749E3E00C44A56 /* Assets.xcassets in Resources */,
+				2A35073529754E5D00435C28 /* HomeTableViewCell.xib in Resources */,
 				2A8798FB29749E3B00C44A56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,8 +354,10 @@
 			files = (
 				2A8798FE29749E3B00C44A56 /* RAWG_GAMES.xcdatamodeld in Sources */,
 				2A8798F829749E3B00C44A56 /* HomeViewController.swift in Sources */,
+				2A35073429754E5D00435C28 /* HomeTableViewCell.swift in Sources */,
 				2A35071F29752EC600435C28 /* HomeModel.swift in Sources */,
 				2A35072129752EE900435C28 /* HomeViewModel.swift in Sources */,
+				2A35073129754E4400435C28 /* HomeTableViewHelper.swift in Sources */,
 				2A87992E2974A55600C44A56 /* DetailViewController.swift in Sources */,
 				2A8799342974A5B100C44A56 /* NotTakeViewController.swift in Sources */,
 				2A3507232975333B00435C28 /* Service Model.swift in Sources */,

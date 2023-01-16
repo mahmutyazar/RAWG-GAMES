@@ -14,11 +14,12 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="n6N-W6-1Mm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="daj-Kf-FHC">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Wju-jN-HoN"/>
+                        <segue destination="3sd-jI-OKz" kind="relationship" relationship="viewControllers" id="Wju-jN-HoN"/>
                         <segue destination="jCh-cH-MqF" kind="relationship" relationship="viewControllers" id="H9h-6I-DJK"/>
                         <segue destination="D6N-qe-hph" kind="relationship" relationship="viewControllers" id="JQK-zY-5ff"/>
                     </connections>
@@ -74,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="1728" y="712"/>
         </scene>
-        <!--Home-->
+        <!--Games-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="RAWG_GAMES" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,11 +85,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="ECd-dy-3ni"/>
+                    <navigationItem key="navigationItem" title="Games" id="CQP-pa-DQP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-701"/>
+            <point key="canvasLocation" x="1906.1538461538462" y="-701.65876777251185"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="da4-Z6-KjE">
@@ -103,7 +104,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3L-PO-XAC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1729" y="-702"/>
+            <point key="canvasLocation" x="2656.9230769230767" y="-702.36966824644549"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Vct-Ne-avT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3sd-jI-OKz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="ECd-dy-3ni"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2QX-gh-dNX">
+                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Izv-6g-4Gf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GUN-pa-G8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.92307692307691" y="-701.65876777251185"/>
         </scene>
     </scenes>
     <resources>
