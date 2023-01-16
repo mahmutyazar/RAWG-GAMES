@@ -9,6 +9,9 @@ import Foundation
 
 class HomeViewModel {
     
+    private let model = HomeModel()
     
-    
+    func didViewLoad() {
+        model.fetchData()
+    }
 }

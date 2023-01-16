@@ -11,6 +11,7 @@
 		2A35071D297528EC00435C28 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2A35071C297528EC00435C28 /* Kingfisher */; };
 		2A35071F29752EC600435C28 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35071E29752EC600435C28 /* HomeModel.swift */; };
 		2A35072129752EE900435C28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35072029752EE900435C28 /* HomeViewModel.swift */; };
+		2A3507232975333B00435C28 /* Service Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3507222975333B00435C28 /* Service Model.swift */; };
 		2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F329749E3B00C44A56 /* AppDelegate.swift */; };
 		2A8798F629749E3B00C44A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F529749E3B00C44A56 /* SceneDelegate.swift */; };
 		2A8798F829749E3B00C44A56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F729749E3B00C44A56 /* HomeViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		2A35071E29752EC600435C28 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		2A35072029752EE900435C28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2A3507222975333B00435C28 /* Service Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Service Model.swift"; sourceTree = "<group>"; };
 		2A8798F029749E3B00C44A56 /* RAWG GAMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAWG GAMES.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8798F329749E3B00C44A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A8798F529749E3B00C44A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				2A35071E29752EC600435C28 /* HomeModel.swift */,
 				2A35072029752EE900435C28 /* HomeViewModel.swift */,
 				2A8798F729749E3B00C44A56 /* HomeViewController.swift */,
+				2A3507222975333B00435C28 /* Service Model.swift */,
 			);
 			path = "Home Screen";
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				2A35072129752EE900435C28 /* HomeViewModel.swift in Sources */,
 				2A87992E2974A55600C44A56 /* DetailViewController.swift in Sources */,
 				2A8799342974A5B100C44A56 /* NotTakeViewController.swift in Sources */,
+				2A3507232975333B00435C28 /* Service Model.swift in Sources */,
 				2A8799322974A59200C44A56 /* NotesViewController.swift in Sources */,
 				2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */,
 				2A8799302974A57B00C44A56 /* FavoritesViewController.swift in Sources */,

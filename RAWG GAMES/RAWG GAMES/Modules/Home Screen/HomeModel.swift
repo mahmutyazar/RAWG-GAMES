@@ -8,14 +8,30 @@
 import Foundation
 import Alamofire
 
+protocol HomeModelProtocol: AnyObject {
+    func didDataFetch()
+    func didDataCouldntFetch()
+}
+
 class HomeModel {
     
     let apiKey: String = "ed862e3ef473469890abd5142066f509"
     
+    private var data: [Result] = []
     
-    func fetcData() {
+    weak var delegate: HomeModelProtocol?
+    
+    func fetchData() {
         
-    //https://api.rawg.io/api/games
+        AF.request("https://api.rawg.io/api/games?key=\(apiKey)").responseDecodable(of: ApiGame.self) { game in
+            guard let response = game.value else {
+                self.delegate?.didDataCouldntFetch()
+                return
+            }
+            self.data = response.results ?? []
+            self.delegate?.didDataFetch()
+            print(self.data)
+        }
         
     }
     
