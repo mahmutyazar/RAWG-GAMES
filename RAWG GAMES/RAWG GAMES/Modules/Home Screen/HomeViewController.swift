@@ -21,12 +21,37 @@ class HomeViewController: UIViewController {
         setupBindings()
         viewModel.didViewLoad()
     }
+    
+    
+    @IBAction func button(_ sender: Any) {
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    
+    
+    
+    
 }
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let detailsVC = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
+            return
+        }
+        navigationController?.pushViewController(detailsVC, animated: true)
+        
+    }
+    
+}
+
 
 extension HomeViewController {
     
     private func setupUI() {
-        tableViewHelper = .init(tableView: homeTableView, viewModel: viewModel)
+        tableViewHelper = .init(tableView: (homeTableView), viewModel: viewModel)
+        homeTableView.delegate = self
     }
     
     func setupBindings() {
@@ -42,7 +67,4 @@ extension HomeViewController {
         }
     }
     
-    
-    
 }
-

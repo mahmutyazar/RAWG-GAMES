@@ -78,7 +78,7 @@
         <!--Games-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="RAWG_GAMES" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeViewController" customModule="RAWG_GAMES" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,6 @@
                     <navigationItem key="navigationItem" title="Games" id="CQP-pa-DQP"/>
                     <connections>
                         <outlet property="homeTableView" destination="KsD-LP-N6h" id="TYd-yR-4A9"/>
-                        <segue destination="L3N-5E-6YZ" kind="show" identifier="toDetailsVC" id="Fcw-B2-zw1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,7 +109,7 @@
         <!--Detail View Controller-->
         <scene sceneID="da4-Z6-KjE">
             <objects>
-                <viewController id="L3N-5E-6YZ" customClass="DetailViewController" customModule="RAWG_GAMES" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailViewController" id="L3N-5E-6YZ" customClass="DetailViewController" customModule="RAWG_GAMES" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I7G-xO-iBU">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

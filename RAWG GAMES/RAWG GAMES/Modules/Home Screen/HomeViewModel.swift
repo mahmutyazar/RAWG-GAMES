@@ -23,7 +23,8 @@ class HomeViewModel {
     }
     
     func itemPressed(_ index: Int) {
-        //TODO:  
+        //TODO:
+        
     }
 }
 
