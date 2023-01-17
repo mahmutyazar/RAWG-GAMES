@@ -9,9 +9,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    private let viewModel = DetailViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        viewModel.didViewLoad()
     }
 }

@@ -33,13 +33,3 @@ class HomeTableViewCell: UITableViewCell {
         genreLabel.text = model.genre.map{ element in element.name ?? ""}.joined(separator: ",")
     }
 }
-
-struct HomeCellModel {
-    let id: Int
-    let name: String
-    let backgroundImage: String
-    let released: String
-    let rating: Double
-    let ratingTop: Int
-    let genre: [Genre]
-}
