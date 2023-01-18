@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class HomeViewModel {
     
     private let model = HomeModel()
@@ -23,8 +24,7 @@ class HomeViewModel {
     }
     
     func itemPressed(_ index: Int) {
-        //TODO:
-        
+        print(index)
     }
 }
 
@@ -33,6 +33,7 @@ extension HomeViewModel: HomeModelProtocol {
         let homeCellModel: [HomeCellModel] = model.data.map { .init(id: $0.id ?? 0, name: $0.name ?? "", backgroundImage: $0.backgroundImage ?? "", released: $0.released ?? "", rating: $0.rating ?? 0.0, ratingTop: $0.ratingTop ?? 0, genre: $0.genres! )}
         
         loadItems?(homeCellModel)
+        print(homeCellModel)
     }
     
     func didDataCouldntFetch() {

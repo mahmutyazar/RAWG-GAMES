@@ -26,17 +26,26 @@ class HomeModel {
     
     func fetchData() {
         
-        AF.request("https://api.rawg.io/api/games?key=\(apiKey)").responseDecodable(of: ApiGame.self) { game in
+        AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=12").responseDecodable(of: ApiGame.self) { game in
             guard let response = game.value else {
                 self.delegate?.didDataCouldntFetch()
-                print("veri yok")
+                print("no data")
                 return
             }
             self.data = response.results ?? []
             self.delegate?.didDataFetch()
-            print(self.data)
         }
         
     }
     
+}
+
+struct HomeCellModel {
+    let id: Int
+    let name: String
+    let backgroundImage: String
+    let released: String
+    let rating: Double
+    let ratingTop: Int
+    let genre: [Genre]
 }

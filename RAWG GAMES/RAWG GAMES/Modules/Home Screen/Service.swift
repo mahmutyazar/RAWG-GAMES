@@ -20,10 +20,14 @@ import Foundation
 struct ApiGame: Codable {
     
     let count: Int?
+    let next: String
     let results: [Result]?
+    let description: String?
     
     enum CodingKeys: String, CodingKey {
         case count, results
+        case description
+        case next
     }
 }
 
