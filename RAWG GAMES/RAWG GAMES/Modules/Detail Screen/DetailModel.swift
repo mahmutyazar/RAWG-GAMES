@@ -16,26 +16,30 @@ protocol DetailModelProtocol: AnyObject {
 
 class DetailModel {
     
-    let gameID: Int = 3498
+    var gameId: Int? {
+        didSet {
+            fetchDetailData()
+        }
+    }
+    
     let apiKey: String = "ed862e3ef473469890abd5142066f509"
     
-    private(set) var detailData: Game?
+    private(set) var detailData: ApiGameDetail?
     
     weak var delegate: DetailModelProtocol?
     
     func fetchDetailData() {
+      
+        guard let gameId = gameId else {return}
         
-        AF.request("https://api.rawg.io/api/games/3498?key=ed862e3ef473469890abd5142066f509").responseDecodable(of: ApiGameDetail.self) { detail in
+        AF.request("https://api.rawg.io/api/games/\(gameId)?key=ed862e3ef473469890abd5142066f509").responseDecodable(of: ApiGameDetail.self) { detail in
             guard let response = detail.value else {
                 self.delegate?.didDetailDataCouldntFetch()
                 print("no detail")
                 return
             }
-            
-            print(response)
-            
-            
+            self.detailData = response
+            self.delegate?.didDetailDataFetch()
         }
-        
     }
 }

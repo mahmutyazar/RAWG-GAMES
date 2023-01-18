@@ -20,7 +20,6 @@ struct ApiGameDetail: Codable {
     let website: String?
     let rating: Double?
     let ratingTop: Int?
-    let stores: [Store]?
     let descriptionRaw: String?
 
     enum CodingKeys: String, CodingKey {
@@ -30,19 +29,18 @@ struct ApiGameDetail: Codable {
         case backgroundImage = "background_image"
         case website, rating
         case ratingTop = "rating_top"
-        case stores
         case descriptionRaw = "description_raw"
     }
 }
 
 struct Game {
-    var id: Int?
+    var gameID: Int?
     var slug: String?
     var name: String?
     var released: String?
     var backgroundImage: String?
     var website: String?
-    var rating: Double?
-    var ratingTop: Int?
+    var rating: Double
+    var ratingTop: Int
     var descriptionRaw: String?
 }

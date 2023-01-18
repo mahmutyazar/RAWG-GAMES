@@ -13,39 +13,17 @@ class HomeViewController: UIViewController {
     
     private let viewModel = HomeViewModel()
     private var tableViewHelper: HomeTableViewHelper!
+
+    var items : [HomeCellModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setupUI()
         setupBindings()
         viewModel.didViewLoad()
     }
-    
-    
-    @IBAction func button(_ sender: Any) {
-        performSegue(withIdentifier: "toDetailsVC", sender: nil)
-    }
-    
-    
-    
-    
 }
-
-extension HomeViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let detailsVC = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
-            return
-        }
-        navigationController?.pushViewController(detailsVC, animated: true)
-        
-    }
-    
-}
-
 
 extension HomeViewController {
     
@@ -64,7 +42,25 @@ extension HomeViewController {
         
         viewModel.loadItems = {[weak self] items in
             self?.tableViewHelper.setItems(items)
+            self!.items = items
         }
     }
-    
+}
+
+extension HomeViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let detailsVC = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
+            return
+        }
+
+        let id = items[indexPath.row].id
+        detailsVC.getID(id)
+
+        navigationController?.pushViewController(detailsVC, animated: true)
+
+
+    }
 }

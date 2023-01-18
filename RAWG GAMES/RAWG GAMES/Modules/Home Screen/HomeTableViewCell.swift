@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 import Kingfisher
 
-class HomeTableViewCell: UITableViewCell {
 
+
+class HomeTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
     
@@ -31,5 +33,7 @@ class HomeTableViewCell: UITableViewCell {
         releasedLabel.text = model.released.prefix(4).description
         ratingLabel.text = "\(model.rating)/\(model.ratingTop)"
         genreLabel.text = model.genre.map{ element in element.name ?? ""}.joined(separator: ",")
+        
+        NotificationCenter.default.post(name: Notification.Name("gameId"), object: model.id)
     }
 }
