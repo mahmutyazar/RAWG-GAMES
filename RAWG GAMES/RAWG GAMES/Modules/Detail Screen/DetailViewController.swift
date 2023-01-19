@@ -13,26 +13,27 @@ class DetailViewController: UIViewController {
     
 
     @IBOutlet weak var detailImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
-    
-//    private let viewModel = DetailViewModel()
+
     
     private var viewModel: DetailViewModel?
     
+    var favoriteGame: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        
+        detailImageView.clipsToBounds = true
+        detailImageView.layer.cornerRadius = 15
+        descriptionTextView.backgroundColor = .systemGray6
         setupBindings()
         viewModel?.didViewLoad()
     }
-    
+
     func setupBindings() {
         viewModel?.errorCaughtOnDetail = {[weak self] alert in
             let alert = UIAlertController(title: "ALERT", message: alert, preferredStyle: .alert)
@@ -41,13 +42,17 @@ class DetailViewController: UIViewController {
         }
         
         viewModel?.loadItems = {[weak self] item in
+            self?.favoriteGame = item
             self?.detailImageView.kf.setImage(with: URL.init(string: item.backgroundImage ?? ""))
-            self?.nameLabel.text = item.name ?? ""
-            self?.yearLabel.text = item.released?.prefix(4).description ?? ""
+            self?.yearLabel.text = "Released: \(item.released?.prefix(4).description ?? "")"
             self?.websiteLabel.text = item.website ?? ""
-            self?.rateLabel.text = "\(item.rating)/\(item.ratingTop)"
+            self?.rateLabel.text = "Rate: \(item.rating)/\(item.ratingTop)"
             self?.descriptionTextView.text = item.descriptionRaw ?? ""
         }
+    }
+    
+    @IBAction func favoriteButton(_ sender: Any) {
+        print(self.favoriteGame)
     }
     
     func getID(_ id: Int) {

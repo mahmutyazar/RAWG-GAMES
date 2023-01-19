@@ -58,6 +58,7 @@ extension HomeViewController: UITableViewDelegate {
 
         let id = items[indexPath.row].id
         detailsVC.getID(id)
+        detailsVC.title = items[indexPath.row].name
 
         navigationController?.pushViewController(detailsVC, animated: true)
 
