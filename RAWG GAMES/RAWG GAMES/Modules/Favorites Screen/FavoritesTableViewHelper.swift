@@ -10,9 +10,10 @@ import CoreData
 
 class FavoriteTableViewHelper: NSObject {
     
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let cellIdentifier = "HomeTableViewCell"
+    
+    private let viewModel = FavoritesViewModel()
     
     private var tableView: UITableView?
     private var favoriteGames: [FavoriteGame] = []
@@ -20,30 +21,32 @@ class FavoriteTableViewHelper: NSObject {
     init(tableView: UITableView) {
         self.tableView = tableView
         super.init()
-        retrieveFavoritesFromCoreData()
-        tableView.reloadData()
+//        retrieveFavoritesFromCoreData()
         setupTableView()
     }
     
     private func setupTableView() {
         tableView?.separatorStyle = .none
         tableView?.register(.init(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-//        tableView?.delegate = self
         tableView?.dataSource = self
     }
     
-    private func retrieveFavoritesFromCoreData() {
-        
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<FavoriteGame>(entityName: "FavoriteGame")
-        
-        do {
-            let result = try context.fetch(request)
-            self.favoriteGames = result
-        } catch {
-            print("Data could not retrieve from CoreData")
-        }
+    func setItems(with items: [FavoriteGame]) {
+        self.favoriteGames = items
+        tableView?.reloadData()
     }
+    
+    
+//    private func retrieveFavoritesFromCoreData() {
+//        let context = appDelegate.persistentContainer.viewContext
+//        let request = NSFetchRequest<FavoriteGame>(entityName: "FavoriteGame")
+//        do {
+//            let result = try context.fetch(request)
+//            self.favoriteGames = result
+//        } catch {
+//            print("Data could not retrieve from CoreData")
+//        }
+//    }
 }
 
 extension FavoriteTableViewHelper: UITableViewDataSource {

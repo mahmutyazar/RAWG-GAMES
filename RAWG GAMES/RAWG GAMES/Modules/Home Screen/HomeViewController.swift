@@ -61,7 +61,5 @@ extension HomeViewController: UITableViewDelegate {
         detailsVC.title = items[indexPath.row].name
 
         navigationController?.pushViewController(detailsVC, animated: true)
-
-
     }
 }
