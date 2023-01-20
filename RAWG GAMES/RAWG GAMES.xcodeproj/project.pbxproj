@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1507F1297B0D8000BAEDAE /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1507F0297B0D8000BAEDAE /* SecretKeys.swift */; };
 		2A35071A2975289F00435C28 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3507192975289F00435C28 /* Alamofire */; };
 		2A35071D297528EC00435C28 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2A35071C297528EC00435C28 /* Kingfisher */; };
 		2A35071F29752EC600435C28 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35071E29752EC600435C28 /* HomeModel.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A1507F0297B0D8000BAEDAE /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		2A35071E29752EC600435C28 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		2A35072029752EE900435C28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2A3507222975333B00435C28 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A1507F2297B0D8700BAEDAE /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				2A1507F0297B0D8000BAEDAE /* SecretKeys.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
 		2A8798E729749E3B00C44A56 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +184,7 @@
 				2A8799292974A44400C44A56 /* Favorites Screen */,
 				2A87992A2974A45300C44A56 /* Notes Screen */,
 				2A87992C2974A4AE00C44A56 /* Note Take Screen */,
+				2A1507F2297B0D8700BAEDAE /* Secrets */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -379,6 +390,7 @@
 				2A35071F29752EC600435C28 /* HomeModel.swift in Sources */,
 				2A35072129752EE900435C28 /* HomeViewModel.swift in Sources */,
 				2A35073129754E4400435C28 /* HomeTableViewHelper.swift in Sources */,
+				2A1507F1297B0D8000BAEDAE /* SecretKeys.swift in Sources */,
 				2A87992E2974A55600C44A56 /* DetailViewController.swift in Sources */,
 				2A8799342974A5B100C44A56 /* NotTakeViewController.swift in Sources */,
 				2A3507232975333B00435C28 /* Service.swift in Sources */,

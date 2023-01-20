@@ -22,8 +22,6 @@ class DetailModel {
         }
     }
     
-    let apiKey: String = "ed862e3ef473469890abd5142066f509"
-    
     private(set) var detailData: ApiGameDetail?
     
     weak var delegate: DetailModelProtocol?
@@ -32,7 +30,7 @@ class DetailModel {
         
         guard let gameId = gameId else {return}
         
-        AF.request("https://api.rawg.io/api/games/\(gameId)?key=ed862e3ef473469890abd5142066f509").responseDecodable(of: ApiGameDetail.self) { detail in
+        AF.request("https://api.rawg.io/api/games/\(gameId)?key=\(Constants.apiKey)").responseDecodable(of: ApiGameDetail.self) { detail in
             guard let response = detail.value else {
                 self.delegate?.didDetailDataCouldntFetch()
                 print("no detail")

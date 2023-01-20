@@ -24,13 +24,13 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          
-        
-        viewModel.didViewLoad()
+        setupBindings()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupUI()
-        setupBindings()
+       
+        viewModel.didViewLoad()
         favoritesTableView.reloadData()
     }
     
@@ -95,12 +95,11 @@ extension FavoritesViewController: UITableViewDelegate {
             return
         }
         
-        print(favoriteGames.count)
-//        let id = favoriteGames[indexPath.row].id
-//        detailsVC.getID(Int(id))
-//        detailsVC.title = favoriteGames[indexPath.row].name
-//        detailsVC.isFavorite = true
-//        navigationController?.pushViewController(detailsVC, animated: true)
+        let id = favoriteGames[indexPath.row].id
+        detailsVC.getID(Int(id))
+        detailsVC.title = favoriteGames[indexPath.row].name
+        detailsVC.isFavorite = true
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
