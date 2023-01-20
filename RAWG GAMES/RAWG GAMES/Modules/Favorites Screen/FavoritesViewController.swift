@@ -30,6 +30,7 @@ class FavoritesViewController: UIViewController {
         favoritesTableView.reloadData()
     }
     
+    
     @IBAction func cleanButton(_ sender: Any) {
         let alert = UIAlertController(title: "WARNING", message: "Are you sure to delete all favorites?", preferredStyle: .alert)
             
@@ -88,7 +89,17 @@ class FavoritesViewController: UIViewController {
 }
 
 extension FavoritesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let detailsVC = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
+            return
+        }
+
+        let id = favoriteGames[indexPath.row].id
+        detailsVC.getID(Int(id))
+        detailsVC.title = favoriteGames[indexPath.row].name
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
 }
 
 extension FavoritesViewController: UITableViewDataSource {
@@ -105,5 +116,14 @@ extension FavoritesViewController: UITableViewDataSource {
         cell.ratingLabel.text = "\(favoriteGames[indexPath.row].rating)/\(favoriteGames[indexPath.row].ratingTop)"
         cell.backgroundColor = .systemGray6
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let commit = favoriteGames[indexPath.row]
+            appDelegate.persistentContainer.viewContext.delete(commit)
+            favoriteGames.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }

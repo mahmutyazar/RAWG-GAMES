@@ -78,7 +78,6 @@ class DetailViewController: UIViewController {
     func deleteObject(_ data: Game) {
         
         
-        
     }
     
     @IBAction func favoriteButton(_ sender: UIButton) {
@@ -93,6 +92,11 @@ class DetailViewController: UIViewController {
         }
     }
     
+    func deleteItem() {
+        
+        
+    }
+    
     func setButtonBackground(view: UIButton, on: UIImage, off: UIImage, onOffStatus: Bool) {
         switch onOffStatus {
         case true:
@@ -101,7 +105,6 @@ class DetailViewController: UIViewController {
             view.setImage(off, for: .normal)
         }
     }
-    
     
     func getID(_ id: Int) {
         viewModel = DetailViewModel(id: id)

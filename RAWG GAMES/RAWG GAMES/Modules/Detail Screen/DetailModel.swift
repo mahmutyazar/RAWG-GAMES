@@ -29,7 +29,7 @@ class DetailModel {
     weak var delegate: DetailModelProtocol?
     
     func fetchDetailData() {
-      
+        
         guard let gameId = gameId else {return}
         
         AF.request("https://api.rawg.io/api/games/\(gameId)?key=ed862e3ef473469890abd5142066f509").responseDecodable(of: ApiGameDetail.self) { detail in
