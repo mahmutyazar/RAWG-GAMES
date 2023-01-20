@@ -18,15 +18,13 @@ class HomeModel {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    let apiKey: String = "ed862e3ef473469890abd5142066f509"
-    
     private(set) var data: [Result] = []
     
     weak var delegate: HomeModelProtocol?
     
     func fetchData() {
         
-        AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=12").responseDecodable(of: ApiGame.self) { game in
+        AF.request("https://api.rawg.io/api/games?key=\(Constants.apiKey)&page=12").responseDecodable(of: ApiGame.self) { game in
             guard let response = game.value else {
                 self.delegate?.didDataCouldntFetch()
                 print("no data")

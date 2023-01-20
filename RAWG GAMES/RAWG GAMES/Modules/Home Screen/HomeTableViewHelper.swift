@@ -10,6 +10,7 @@ import UIKit
 class HomeTableViewHelper: NSObject {
     
     typealias RowItem = HomeCellModel
+    
     private let cellIdentifier = "HomeTableViewCell"
     private var tableView: UITableView?
     private weak var viewModel: HomeViewModel?
