@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A1507F1297B0D8000BAEDAE /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1507F0297B0D8000BAEDAE /* SecretKeys.swift */; };
+		2A1507F5297B1F1C00BAEDAE /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1507F4297B1F1C00BAEDAE /* InternetManager.swift */; };
 		2A35071A2975289F00435C28 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3507192975289F00435C28 /* Alamofire */; };
 		2A35071D297528EC00435C28 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2A35071C297528EC00435C28 /* Kingfisher */; };
 		2A35071F29752EC600435C28 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35071E29752EC600435C28 /* HomeModel.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		2A1507F0297B0D8000BAEDAE /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
+		2A1507F4297B1F1C00BAEDAE /* InternetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetManager.swift; sourceTree = "<group>"; };
 		2A35071E29752EC600435C28 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		2A35072029752EE900435C28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2A3507222975333B00435C28 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 			path = Secrets;
 			sourceTree = "<group>";
 		};
+		2A1507F3297B1EF000BAEDAE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2A1507F4297B1F1C00BAEDAE /* InternetManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		2A8798E729749E3B00C44A56 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 			children = (
 				2A8799262974A40E00C44A56 /* Modules */,
 				2A1507F2297B0D8700BAEDAE /* Secrets */,
+				2A1507F3297B1EF000BAEDAE /* Managers */,
 				2A8798F329749E3B00C44A56 /* AppDelegate.swift */,
 				2A8798F529749E3B00C44A56 /* SceneDelegate.swift */,
 				2A8798F929749E3B00C44A56 /* Main.storyboard */,
@@ -396,6 +407,7 @@
 				2A3507232975333B00435C28 /* Service.swift in Sources */,
 				2A8799322974A59200C44A56 /* NotesViewController.swift in Sources */,
 				2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */,
+				2A1507F5297B1F1C00BAEDAE /* InternetManager.swift in Sources */,
 				2A8799302974A57B00C44A56 /* FavoritesViewController.swift in Sources */,
 				2A8798F629749E3B00C44A56 /* SceneDelegate.swift in Sources */,
 				2ACA4971297AB40100878CA9 /* FavoritesTableViewHelper.swift in Sources */,

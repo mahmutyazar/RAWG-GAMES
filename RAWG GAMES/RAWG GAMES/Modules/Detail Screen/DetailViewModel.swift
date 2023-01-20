@@ -25,6 +25,7 @@ class DetailViewModel {
 }
 
 extension DetailViewModel: DetailModelProtocol {
+    
     func didDetailDataFetch() {
        let game: Game = .init(gameID: model.detailData?.id, slug: model.detailData?.slug, name: model.detailData?.name, released: model.detailData?.released, backgroundImage: model.detailData?.backgroundImage, website: model.detailData?.website, rating: (model.detailData?.rating)!, ratingTop: (model.detailData?.ratingTop)!, descriptionRaw: model.detailData?.descriptionRaw)
         

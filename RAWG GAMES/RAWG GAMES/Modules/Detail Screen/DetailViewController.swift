@@ -43,14 +43,14 @@ class DetailViewController: UIViewController {
             self?.present(alert, animated: true)
         }
         
-        viewModel?.loadItems = {[weak self] item in
-            self?.favoriteGame = item
-            self?.detailImageView.kf.setImage(with: URL.init(string: item.backgroundImage ?? ""))
-            self?.yearLabel.text = "Released: \(item.released?.prefix(4).description ?? "")"
-            self?.websiteLabel.text = item.website ?? ""
-            self?.rateLabel.text = "Rate: \(item.rating)/\(item.ratingTop)"
-            self?.descriptionTextView.text = item.descriptionRaw ?? ""
-        }
+            viewModel?.loadItems = {[weak self] item in
+                self?.favoriteGame = item
+                self?.detailImageView.kf.setImage(with: URL.init(string: item.backgroundImage ?? ""))
+                self?.yearLabel.text = "Released: \(item.released?.prefix(4).description ?? "")"
+                self?.websiteLabel.text = item.website ?? ""
+                self?.rateLabel.text = "Rate: \(item.rating)/\(item.ratingTop)"
+                self?.descriptionTextView.text = item.descriptionRaw ?? ""
+            }
     }
     
     func saveFavoriteToCoreData(_ data: Game) {

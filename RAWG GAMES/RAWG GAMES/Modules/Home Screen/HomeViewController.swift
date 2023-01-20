@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var homeTableView: UITableView!
     
     private let viewModel = HomeViewModel()
@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
         setupUI()
         setupBindings()
         viewModel.didViewLoad()
+    
     }
 }
 
