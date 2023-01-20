@@ -27,7 +27,6 @@ class HomeTableViewHelper: NSObject {
     private func setupTableView() {
         tableView?.separatorStyle = .none
         tableView?.register(.init(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-//        tableView?.delegate = self
         tableView?.dataSource = self
     }
     
@@ -36,21 +35,6 @@ class HomeTableViewHelper: NSObject {
         tableView?.reloadData()
     }
 }
-
-//extension HomeTableViewHelper: UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        viewModel?.itemPressed(indexPath.row)
-//
-//        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        guard let charDetailVC = mainStoryBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
-//            return
-//        }
-//
-//        vcHome.navigationController?.pushViewController(charDetailVC, animated: true)
-//
-//    }
-//}
 
 
 extension HomeTableViewHelper: UITableViewDataSource {

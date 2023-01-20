@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import CoreData
 
 protocol DetailModelProtocol: AnyObject {
     func didDetailDataFetch()
@@ -26,6 +27,8 @@ class DetailModel {
     
     weak var delegate: DetailModelProtocol?
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     func fetchDetailData() {
         
         guard let gameId = gameId else {return}
@@ -38,6 +41,7 @@ class DetailModel {
             }
             self.detailData = response
             self.delegate?.didDetailDataFetch()
+            
         }
     }
 }

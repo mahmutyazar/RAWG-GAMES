@@ -32,8 +32,7 @@ class HomeTableViewCell: UITableViewCell {
         gameNameLabel.text = model.name
         releasedLabel.text = model.released.prefix(4).description
         ratingLabel.text = "\(model.rating)/\(model.ratingTop)"
-        genreLabel.text = model.genre.map{ element in element.name ?? ""}.joined(separator: ",")
+//        genreLabel.text = model.genre.map{ element in element.name ?? ""}.joined(separator: ",")
         
-//        NotificationCenter.default.post(name: Notification.Name("gameId"), object: model.id)
     }
 }
