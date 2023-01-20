@@ -69,7 +69,6 @@ class FavoritesViewController: UIViewController {
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
-        self.favoritesTableView.reloadData()
     }
     
     func deleteAllRecords(entity : String) {
@@ -81,7 +80,6 @@ class FavoritesViewController: UIViewController {
         do {
                 try managedContext.execute(deleteRequest)
                 try managedContext.save()
-                self.favoritesTableView.reloadData()
             } catch {
                 print ("There was an error")
             }

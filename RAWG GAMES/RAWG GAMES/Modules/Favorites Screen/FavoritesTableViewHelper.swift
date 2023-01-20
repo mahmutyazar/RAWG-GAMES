@@ -21,7 +21,7 @@ class FavoriteTableViewHelper: NSObject {
     init(tableView: UITableView) {
         self.tableView = tableView
         super.init()
-//        retrieveFavoritesFromCoreData()
+        
         setupTableView()
     }
     
@@ -35,18 +35,6 @@ class FavoriteTableViewHelper: NSObject {
         self.favoriteGames = items
         tableView?.reloadData()
     }
-    
-    
-//    private func retrieveFavoritesFromCoreData() {
-//        let context = appDelegate.persistentContainer.viewContext
-//        let request = NSFetchRequest<FavoriteGame>(entityName: "FavoriteGame")
-//        do {
-//            let result = try context.fetch(request)
-//            self.favoriteGames = result
-//        } catch {
-//            print("Data could not retrieve from CoreData")
-//        }
-//    }
 }
 
 extension FavoriteTableViewHelper: UITableViewDataSource {

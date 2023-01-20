@@ -33,7 +33,4 @@ class FavoritesModel {
             print("Data could not retrieve from CoreData")
         }
     }
-    
-    
-    
 }

@@ -148,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8799262974A40E00C44A56 /* Modules */,
+				2A1507F2297B0D8700BAEDAE /* Secrets */,
 				2A8798F329749E3B00C44A56 /* AppDelegate.swift */,
 				2A8798F529749E3B00C44A56 /* SceneDelegate.swift */,
 				2A8798F929749E3B00C44A56 /* Main.storyboard */,
@@ -184,7 +185,6 @@
 				2A8799292974A44400C44A56 /* Favorites Screen */,
 				2A87992A2974A45300C44A56 /* Notes Screen */,
 				2A87992C2974A4AE00C44A56 /* Note Take Screen */,
-				2A1507F2297B0D8700BAEDAE /* Secrets */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
