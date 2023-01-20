@@ -36,10 +36,41 @@
                     <view key="view" contentMode="scaleToFill" id="7Bl-o2-cDu">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-NU-gGx">
+                                <rect key="frame" x="0.0" y="143" width="390" height="569"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WVz-rt-VKk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IDG-NU-gGx" firstAttribute="top" secondItem="WVz-rt-VKk" secondAttribute="top" id="8ss-B2-AoG"/>
+                            <constraint firstItem="WVz-rt-VKk" firstAttribute="bottom" secondItem="IDG-NU-gGx" secondAttribute="bottom" id="Z8U-Q5-vhp"/>
+                            <constraint firstItem="IDG-NU-gGx" firstAttribute="leading" secondItem="WVz-rt-VKk" secondAttribute="leading" id="ZcC-qu-xtY"/>
+                            <constraint firstItem="WVz-rt-VKk" firstAttribute="trailing" secondItem="IDG-NU-gGx" secondAttribute="trailing" id="oar-q3-v4H"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorites" largeTitleDisplayMode="always" id="Mrs-5q-FDt"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Favorites" largeTitleDisplayMode="always" id="Mrs-5q-FDt">
+                        <centerItemGroups>
+                            <barButtonItemGroup customizationDisposition="fixed" id="Kv2-Uc-8E8">
+                                <barButtonItems>
+                                    <barButtonItem title="Delete All Favorites" style="done" id="WZL-XW-4jD">
+                                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                                        <color key="tintColor" red="0.97538524869999998" green="0.34811282160000001" blue="0.31630063060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="cleanButton:" destination="jCh-cH-MqF" id="NYG-B4-xTE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </barButtonItems>
+                            </barButtonItemGroup>
+                        </centerItemGroups>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="IDG-NU-gGx" id="AS1-Aq-q27"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0N-tc-ih3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,7 +180,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2z-kR-Lw9">
-                                <rect key="frame" x="313" y="295" width="38" height="35"/>
+                                <rect key="frame" x="309" y="295" width="38" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>

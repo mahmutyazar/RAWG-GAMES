@@ -26,7 +26,7 @@ class HomeModel {
     
     func fetchData() {
         
-        AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=12").responseDecodable(of: ApiGame.self) { game in
+        AF.request("https://api.rawg.io/api/games?key=\(apiKey)&page=14").responseDecodable(of: ApiGame.self) { game in
             guard let response = game.value else {
                 self.delegate?.didDataCouldntFetch()
                 print("no data")
