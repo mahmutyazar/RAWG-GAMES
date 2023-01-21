@@ -42,6 +42,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="c0W-vo-vK1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="IDG-NU-gGx" firstAttribute="top" secondItem="7Bl-o2-cDu" secondAttribute="top" id="8jW-n4-79Y"/>
@@ -116,17 +117,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KsD-LP-N6h">
-                                <rect key="frame" x="0.0" y="143" width="390" height="618"/>
+                                <rect key="frame" x="0.0" y="199" width="390" height="562"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" systemColor="systemGray6Color"/>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search whatever you looking for..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IA6-7Y-2KC">
+                                <rect key="frame" x="0.0" y="143" width="390" height="56"/>
+                                <color key="barTintColor" systemColor="systemGray6Color"/>
+                                <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nRm-6K-IB4"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KsD-LP-N6h" secondAttribute="bottom" id="GGx-IS-2ZB"/>
+                            <constraint firstItem="IA6-7Y-2KC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IhX-cp-MX1"/>
                             <constraint firstItem="KsD-LP-N6h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LKX-Gk-STG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KsD-LP-N6h" secondAttribute="trailing" id="OKr-Qi-4fS"/>
-                            <constraint firstItem="KsD-LP-N6h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kY7-9c-tlw"/>
+                            <constraint firstItem="KsD-LP-N6h" firstAttribute="top" secondItem="IA6-7Y-2KC" secondAttribute="bottom" id="Ol9-b1-TZT"/>
+                            <constraint firstItem="IA6-7Y-2KC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b1E-lR-vRU"/>
+                            <constraint firstItem="IA6-7Y-2KC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e3C-BY-kpj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Games" id="CQP-pa-DQP" colorLabel="IBBuiltInLabel-Red"/>

@@ -21,6 +21,7 @@ class HomeModel {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     private(set) var data: [Result] = []
+    private(set) var apiGenre: [[Genre]]?
     private(set) var cacheData: [MainGameList] = []
     
     weak var delegate: HomeModelProtocol?
@@ -28,13 +29,15 @@ class HomeModel {
     func fetchData() {
         
         if InternetManager.shared.isInternetActive() {
-            AF.request("https://api.rawg.io/api/games?key=\(Constants.apiKey)&page=12").responseDecodable(of: ApiGame.self) { game in
+            AF.request("https://api.rawg.io/api/games?key=\(Constants.apiKey)&page=8").responseDecodable(of: ApiGame.self) { game in
                 guard let response = game.value else {
                     self.delegate?.didDataCouldntFetch()
                     print("no data")
                     return
                 }
                 self.data = response.results ?? []
+                self.apiGenre = self.data.compactMap{$0.genres}
+
                 self.delegate?.didDataFetch()
                 
                 for item in self.data {
@@ -91,5 +94,5 @@ struct HomeCellModel {
     let released: String
     let rating: Double
     let ratingTop: Int
-//    let genre: [Genre]
+//    let genre: String
 }
