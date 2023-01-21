@@ -16,16 +16,23 @@ protocol HomeModelProtocol: AnyObject {
     func didDataCouldntFetch()
 }
 
+protocol NextPageProtocol: AnyObject {
+    func didNextPageURLGet(nextPage: String?)
+}
+
 class HomeModel {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     private(set) var data: [Result] = []
-    private(set) var genre: [[Genre]] = []
+//    private(set) var genre: [[Genre]] = []
     private(set) var cacheData: [MainGameList] = []
+    
     private var nextPageURL: String = ""
     
+    
     weak var delegate: HomeModelProtocol?
+    weak var nextPageDelegate: NextPageProtocol?
     
     func fetchData() {
         
@@ -38,8 +45,10 @@ class HomeModel {
                 }
                 
                 self.nextPageURL = response.next
+                self.nextPageDelegate?.didNextPageURLGet(nextPage: self.nextPageURL)
                 self.data = response.results ?? []
-                self.genre = self.data.map{$0.genres!}.compactMap{$0}
+                
+//                self.genre = self.data.map{$0.genres!}.compactMap{$0}
                 self.delegate?.didDataFetch()
                 
                 for item in self.data {
@@ -97,4 +106,8 @@ struct HomeCellModel {
     let rating: Double
     let ratingTop: Int
 //    let genre: [Genre]
+}
+
+struct NextPage {
+    let nextPageURL: String
 }

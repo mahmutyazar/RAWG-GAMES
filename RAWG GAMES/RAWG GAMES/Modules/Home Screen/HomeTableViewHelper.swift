@@ -20,6 +20,7 @@ class HomeTableViewHelper: NSObject {
     private weak var viewModel: HomeViewModel?
     
     private var items: [RowItem] = []
+    private var nextPageURL: String?
     private var searchResults: SearchItem
      
     init(tableView: UITableView, viewModel: HomeViewModel, searchBar: UISearchBar, searchResults: SearchItem, navigationController: UINavigationController) {
@@ -77,9 +78,14 @@ extension HomeTableViewHelper: UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == searchResults.count {
+            
+            
+            
+        }
+    }
     
 }
 
@@ -101,5 +107,12 @@ extension HomeTableViewHelper: UISearchBarDelegate {
 
             self.tableView?.reloadData()
         }
+    }
+}
+
+extension HomeTableViewHelper: NextPageProtocol {
+    func didNextPageURLGet(nextPage: String?) {
+        self.nextPageURL = nextPage
+        print(self.nextPageURL)
     }
 }

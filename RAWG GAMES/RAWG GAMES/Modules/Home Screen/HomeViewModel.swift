@@ -27,10 +27,11 @@ extension HomeViewModel: HomeModelProtocol {
    
     func didDataFetch() {
             
-        let homeCellModel: [HomeCellModel] = model.data.map { .init(id: $0.id ?? 0, name: $0.name ?? "", backgroundImage: $0.backgroundImage ?? "", released: $0.released ?? "", rating: $0.rating ?? 0.0, ratingTop: $0.ratingTop ?? 0)}
-    
+        let homeCellModel: [HomeCellModel] = model.data.map { .init(nextPageURL: $0.next  , id: $0.id ?? 0, name: $0.name ?? "", backgroundImage: $0.backgroundImage ?? "", released: $0.released ?? "", rating: $0.rating ?? 0.0, ratingTop: $0.ratingTop ?? 0)}
+        
         loadItems?(homeCellModel)
     }
+
     
     func didCacheDataFetch() {
         
