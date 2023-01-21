@@ -33,7 +33,7 @@ class DetailModel {
         
         guard let gameId = gameId else {return}
         
-        AF.request("https://api.rawg.io/api/games/\(gameId)?key=\(Constants.apiKey)").responseDecodable(of: ApiGameDetail.self) { detail in
+        AF.request("\(Constants.sharedURL)/\(gameId)?key=\(Constants.apiKey)").responseDecodable(of: ApiGameDetail.self) { detail in
             guard let response = detail.value else {
                 self.delegate?.didDetailDataCouldntFetch()
                 print("no detail")

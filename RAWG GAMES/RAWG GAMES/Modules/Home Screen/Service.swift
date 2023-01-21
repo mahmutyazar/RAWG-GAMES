@@ -49,5 +49,4 @@ struct Result: Codable {
 // MARK: - Genre
 struct Genre: Codable {
     let name, slug: String?
-
 }
