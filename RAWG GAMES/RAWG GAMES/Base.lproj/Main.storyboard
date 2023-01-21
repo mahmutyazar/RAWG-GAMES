@@ -108,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="2656.9230769230767" y="711.61137440758296"/>
         </scene>
-        <!--Games-->
+        <!--HomeTitle-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeViewController" customModule="RAWG_GAMES" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                             <constraint firstItem="IA6-7Y-2KC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="e3C-BY-kpj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Games" id="CQP-pa-DQP" colorLabel="IBBuiltInLabel-Red"/>
+                    <navigationItem key="navigationItem" title="HomeTitle" id="CQP-pa-DQP" colorLabel="IBBuiltInLabel-Red"/>
                     <connections>
                         <outlet property="homeTableView" destination="KsD-LP-N6h" id="TYd-yR-4A9"/>
                         <outlet property="searchBar" destination="IA6-7Y-2KC" id="czm-yk-3UT"/>

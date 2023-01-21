@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        title = NSLocalizedString("HomeTitle", comment: "")
+        
         setupUI()
         setupBindings()
         viewModel.didViewLoad()
