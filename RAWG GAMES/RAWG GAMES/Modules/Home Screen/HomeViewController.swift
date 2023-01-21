@@ -10,11 +10,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     private let viewModel = HomeViewModel()
     private var tableViewHelper: HomeTableViewHelper!
 
     var items : [HomeCellModel] = []
+    var searchResults: [HomeCellModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     private func setupUI() {
-        tableViewHelper = .init(tableView: (homeTableView), viewModel: viewModel)
-        homeTableView.delegate = self
+        tableViewHelper = .init(tableView: (homeTableView), viewModel: viewModel, searchBar: searchBar, searchResults: searchResults, navigationController: navigationController!)
     }
     
     func setupBindings() {
@@ -45,22 +46,5 @@ extension HomeViewController {
             self?.tableViewHelper.setItems(items)
             self!.items = items
         }
-    }
-}
-
-extension HomeViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let detailsVC = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
-            return
-        }
-
-        let id = items[indexPath.row].id
-        detailsVC.getID(id)
-        detailsVC.title = items[indexPath.row].name
-
-        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }

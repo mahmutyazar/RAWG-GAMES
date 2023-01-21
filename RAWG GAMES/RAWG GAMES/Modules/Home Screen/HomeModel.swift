@@ -21,23 +21,25 @@ class HomeModel {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     private(set) var data: [Result] = []
-    private(set) var apiGenre: [[Genre]]?
+    private(set) var genre: [[Genre]] = []
     private(set) var cacheData: [MainGameList] = []
+    private var nextPageURL: String = ""
     
     weak var delegate: HomeModelProtocol?
     
     func fetchData() {
         
         if InternetManager.shared.isInternetActive() {
-            AF.request("https://api.rawg.io/api/games?key=\(Constants.apiKey)&page=8").responseDecodable(of: ApiGame.self) { game in
+            AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)").responseDecodable(of: ApiGame.self) { game in
                 guard let response = game.value else {
                     self.delegate?.didDataCouldntFetch()
                     print("no data")
                     return
                 }
+                
+                self.nextPageURL = response.next
                 self.data = response.results ?? []
-                self.apiGenre = self.data.compactMap{$0.genres}
-
+                self.genre = self.data.map{$0.genres!}.compactMap{$0}
                 self.delegate?.didDataFetch()
                 
                 for item in self.data {
@@ -61,10 +63,10 @@ class HomeModel {
             object.setValue(data.released, forKey: "released")
             object.setValue(data.rating, forKey: "rating")
             object.setValue(data.ratingTop, forKey: "ratingTop")
+//            object.setValue(genre.map{$0.map{$0.name}.description}, forKey: "genre")
             
             do {
                 try context.save()
-                print("cached successfully")
             } catch {
                 print("Main page could not be cached to CoreData.")
             }
@@ -94,5 +96,5 @@ struct HomeCellModel {
     let released: String
     let rating: Double
     let ratingTop: Int
-//    let genre: String
+//    let genre: [Genre]
 }

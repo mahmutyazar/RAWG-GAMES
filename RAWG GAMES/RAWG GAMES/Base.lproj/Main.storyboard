@@ -146,6 +146,7 @@
                     <navigationItem key="navigationItem" title="Games" id="CQP-pa-DQP" colorLabel="IBBuiltInLabel-Red"/>
                     <connections>
                         <outlet property="homeTableView" destination="KsD-LP-N6h" id="TYd-yR-4A9"/>
+                        <outlet property="searchBar" destination="IA6-7Y-2KC" id="czm-yk-3UT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
