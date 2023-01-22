@@ -27,8 +27,6 @@ class DetailModel {
     
     weak var delegate: DetailModelProtocol?
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
     func fetchDetailData() {
         
         guard let gameId = gameId else {return}

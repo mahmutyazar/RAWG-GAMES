@@ -72,12 +72,22 @@ extension HomeTableViewHelper: UITableViewDelegate {
 extension HomeTableViewHelper: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        
+        if InternetManager.shared.isInternetActive() {
+            return searchResults.count
+        } else {
+            return items.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! HomeTableViewCell
-        cell.configure(with: searchResults[indexPath.row])
+        
+        if InternetManager.shared.isInternetActive() {
+            cell.configure(with: searchResults[indexPath.row])
+        } else {
+            cell.configure(with: items[indexPath.row])
+        }
         cell.backgroundColor = .systemGray6
         return cell
     }
@@ -98,11 +108,11 @@ extension HomeTableViewHelper: UISearchBarDelegate {
         pendingRequestWorkItem?.cancel()
         
         let requestWorkItem = DispatchWorkItem { [weak self] in
-        if let searchText = searchBar.text {
-        
-        AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)&search=\(searchText)&page_size=20").responseDecodable(of: ApiGame.self) { search in
+            if let searchText = searchBar.text {
+                
+                AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)&search=\(searchText)&page_size=20").responseDecodable(of: ApiGame.self) { search in
                     
-            guard let response = search.value else {
+                    guard let response = search.value else {
                         print("no data")
                         return
                     }
@@ -110,7 +120,6 @@ extension HomeTableViewHelper: UISearchBarDelegate {
                     let homeCellModel: [HomeCellModel] = results.map {.init(id: $0.id ?? 0, name: $0.name ?? "", backgroundImage: $0.backgroundImage ?? "", released: $0.released ?? "", rating: $0.rating ?? 0.0, ratingTop: $0.ratingTop ?? 0)}
                     
                     self!.searchResults = homeCellModel
-                    
                     self!.tableView?.reloadData()
                 }
             }

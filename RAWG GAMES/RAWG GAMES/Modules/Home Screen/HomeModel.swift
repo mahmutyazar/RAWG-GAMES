@@ -17,9 +17,7 @@ protocol HomeModelProtocol: AnyObject {
 }
 
 class HomeModel {
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+        
     private(set) var data: [Result] = []
     private(set) var genre: [[Genre]] = []
     private(set) var cacheData: [MainGameList] = []
@@ -28,7 +26,7 @@ class HomeModel {
     weak var delegate: HomeModelProtocol?
     
     func fetchData() {
-        
+    
         if InternetManager.shared.isInternetActive() {
             AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)").responseDecodable(of: ApiGame.self) { game in
                 guard let response = game.value else {
@@ -53,7 +51,7 @@ class HomeModel {
 
     func saveToCoreData(_ data: Result) {
         
-        let context = appDelegate.persistentContainer.viewContext
+        let context = Constants.appDelegate.persistentContainer.viewContext
         if let entity = NSEntityDescription.entity(forEntityName: "MainGameList", in: context) {
             let object = NSManagedObject(entity: entity, insertInto: context)
             
@@ -74,12 +72,11 @@ class HomeModel {
     }
     
     func retrieveFromCoreData() {
-        
-        let context = appDelegate.persistentContainer.viewContext
+
         let request = NSFetchRequest<MainGameList>(entityName: "MainGameList")
         
         do {
-            let result = try context.fetch(request)
+            let result = try Constants.context.fetch(request)
             self.cacheData = result
             delegate?.didCacheDataFetch()
         } catch {

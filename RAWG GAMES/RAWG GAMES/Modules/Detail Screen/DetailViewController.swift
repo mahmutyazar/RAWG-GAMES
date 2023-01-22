@@ -17,11 +17,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
-    var isFavorite: Bool = false
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
     private var viewModel: DetailViewModel?
-    
+    var isFavorite: Bool = false
     var favoriteGame: Game?
     
     override func viewDidLoad() {
@@ -53,11 +50,10 @@ class DetailViewController: UIViewController {
     }
     
     func saveFavoriteToCoreData(_ data: Game) {
-        
-        let context = appDelegate.persistentContainer.viewContext
-        if let entity = NSEntityDescription.entity(forEntityName: "FavoriteGame", in: context) {
+
+        if let entity = NSEntityDescription.entity(forEntityName: "FavoriteGame", in: Constants.context) {
             
-            let gameObject = NSManagedObject(entity: entity, insertInto: context)
+            let gameObject = NSManagedObject(entity: entity, insertInto: Constants.context)
             gameObject.setValue(data.gameID, forKey: "id")
             gameObject.setValue(data.name ?? "", forKey: "name")
             gameObject.setValue(data.backgroundImage, forKey: "imageURL")
@@ -65,9 +61,9 @@ class DetailViewController: UIViewController {
             gameObject.setValue(data.ratingTop, forKey: "ratingTop")
             gameObject.setValue(data.released, forKey: "released")
             gameObject.setValue(data.slug, forKey: "slug")
-                        
+            
             do {
-                try context.save()
+                try Constants.context.save()
                 print("saved")
             } catch {
                 print("data could not save to coredata")
@@ -79,10 +75,12 @@ class DetailViewController: UIViewController {
     @IBAction func favoriteButton(_ sender: UIButton) {
         
         isFavorite.toggle()
+        
         setButtonBackground(view: sender, on: UIImage(systemName: "heart.fill")!, off: UIImage(systemName: "heart")!, onOffStatus: isFavorite)
         
         if isFavorite == true {
             saveFavoriteToCoreData(favoriteGame!)
+            
         } else {
            print("deleted")
         }

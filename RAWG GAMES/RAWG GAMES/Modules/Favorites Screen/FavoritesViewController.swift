@@ -11,22 +11,20 @@ import Kingfisher
 
 class FavoritesViewController: UIViewController {
     
-    private let viewModel = FavoritesViewModel()
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
     @IBOutlet weak var favoritesTableView: UITableView!
     
+    private var tableViewHelper: FavoriteTableViewHelper!
+    private let viewModel = FavoritesViewModel()
     var favoriteGames: [FavoriteGame] = []
     
-    private var tableViewHelper: FavoriteTableViewHelper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         
+        
         setupBindings()
         setupUI()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
        
@@ -35,8 +33,7 @@ class FavoritesViewController: UIViewController {
     }
     
     func setupUI() {
-        tableViewHelper = .init(tableView: favoritesTableView)
-        favoritesTableView.delegate = self
+        tableViewHelper = .init(tableView: favoritesTableView, navigationController: navigationController!)
     }
     
     func setupBindings() {
@@ -57,7 +54,7 @@ class FavoritesViewController: UIViewController {
     
         let okAction = UIAlertAction(title: "DELETE", style: UIAlertAction.Style.default) { [self] UIAlertAction in
             do {
-                deleteAllRecords(entity: "FavoriteGame")
+                tableViewHelper.deleteAllRecords(entity: "FavoriteGame")
             } catch {
                 print("could not delete")
             }
@@ -69,35 +66,6 @@ class FavoritesViewController: UIViewController {
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true)
-    }
-    
-    func deleteAllRecords(entity : String) {
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-            
-        do {
-                try managedContext.execute(deleteRequest)
-                try managedContext.save()
-            } catch {
-                print ("There was an error")
-            }
-        }
-}
-
-extension FavoritesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let detailsVC = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
-            return
-        }
-        
-        let id = favoriteGames[indexPath.row].id
-        detailsVC.getID(Int(id))
-        detailsVC.title = favoriteGames[indexPath.row].name
-        detailsVC.isFavorite = true
-        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
