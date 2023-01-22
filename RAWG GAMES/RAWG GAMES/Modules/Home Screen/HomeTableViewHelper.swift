@@ -95,12 +95,14 @@ extension HomeTableViewHelper: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        pendingRequestWorkItem?.cancel() // delay for search
+        pendingRequestWorkItem?.cancel()
         
         let requestWorkItem = DispatchWorkItem { [weak self] in
-            if let searchText = searchBar.text {
-                AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)&search=\(searchText)&page_size=20").responseDecodable(of: ApiGame.self) { search in
-                    guard let response = search.value else {
+        if let searchText = searchBar.text {
+        
+        AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)&search=\(searchText)&page_size=20").responseDecodable(of: ApiGame.self) { search in
+                    
+            guard let response = search.value else {
                         print("no data")
                         return
                     }
@@ -114,7 +116,6 @@ extension HomeTableViewHelper: UISearchBarDelegate {
             }
         }
         pendingRequestWorkItem = requestWorkItem
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250),
-                                      execute: requestWorkItem)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: requestWorkItem)
     }
 }

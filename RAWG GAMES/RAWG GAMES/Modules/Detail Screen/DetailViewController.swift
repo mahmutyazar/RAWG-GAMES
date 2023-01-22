@@ -18,7 +18,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     var isFavorite: Bool = false
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     private var viewModel: DetailViewModel?
@@ -54,6 +53,7 @@ class DetailViewController: UIViewController {
     }
     
     func saveFavoriteToCoreData(_ data: Game) {
+        
         let context = appDelegate.persistentContainer.viewContext
         if let entity = NSEntityDescription.entity(forEntityName: "FavoriteGame", in: context) {
             
