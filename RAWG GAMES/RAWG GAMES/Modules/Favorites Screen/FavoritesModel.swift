@@ -15,18 +15,16 @@ protocol FavoritesModelProtocol: AnyObject {
 }
 
 class FavoritesModel {
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+        
     private(set) var data: [FavoriteGame] = []
     
     weak var delegate: FavoritesModelProtocol?
     
      func retrieveFavoritesFromCoreData() {
-        let context = appDelegate.persistentContainer.viewContext
+         
         let request = NSFetchRequest<FavoriteGame>(entityName: "FavoriteGame")
         do {
-            let result = try context.fetch(request)
+            let result = try Constants.context.fetch(request)
             self.data = result
             self.delegate?.didDataFetch()
         } catch {
