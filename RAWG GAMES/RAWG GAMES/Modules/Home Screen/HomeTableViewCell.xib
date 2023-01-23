@@ -28,7 +28,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="320" id="TkN-Wt-KoC"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -41,13 +41,6 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating/Rating Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj5-61-iNn">
                         <rect key="frame" x="132" y="74" width="144" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAf-vz-7Af">
-                        <rect key="frame" x="132" y="51" width="305" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -67,7 +60,6 @@
             <connections>
                 <outlet property="gameImageView" destination="r4e-VT-4NV" id="Eg4-rx-XH6"/>
                 <outlet property="gameNameLabel" destination="aae-D7-Yzn" id="DWc-yf-Vqi"/>
-                <outlet property="genreLabel" destination="xAf-vz-7Af" id="1az-uJ-5sx"/>
                 <outlet property="ratingLabel" destination="Pj5-61-iNn" id="i9H-Gv-2gH"/>
                 <outlet property="releasedLabel" destination="vu0-UI-ai5" id="A6k-1L-5AN"/>
             </connections>

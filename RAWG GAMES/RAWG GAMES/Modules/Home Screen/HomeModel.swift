@@ -19,25 +19,22 @@ protocol HomeModelProtocol: AnyObject {
 class HomeModel {
         
     private(set) var data: [Result] = []
-//    private(set) var genre: [[Genre]] = []
     private(set) var cacheData: [MainGameList] = []
-    private var nextPageURL: String = ""
+    private let randomInt = Int.random(in: 1..<99)
     
     weak var delegate: HomeModelProtocol?
     
     func fetchData() {
     
         if InternetManager.shared.isInternetActive() {
-            AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)").responseDecodable(of: ApiGame.self) { game in
+            AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)&page=\(randomInt)&page_size=40").responseDecodable(of: ApiGame.self) { game in
                 guard let response = game.value else {
                     self.delegate?.didDataCouldntFetch()
                     print("no data")
                     return
                 }
                 
-                self.nextPageURL = response.next
                 self.data = response.results ?? []
-//                self.genre = self.data.map{$0.genres!}.compactMap{$0}
                 self.delegate?.didDataFetch()
                 
                 for item in self.data {
@@ -61,8 +58,6 @@ class HomeModel {
             object.setValue(data.released, forKey: "released")
             object.setValue(data.rating, forKey: "rating")
             object.setValue(data.ratingTop, forKey: "ratingTop")
-//            object.setValue(genre.map{$0.map{$0.name}.description}, forKey: "genre")
-            
             do {
                 try context.save()
                 
@@ -94,5 +89,4 @@ struct HomeCellModel {
     let released: String
     let rating: Double
     let ratingTop: Int
-//    let genre: [Genre]
 }

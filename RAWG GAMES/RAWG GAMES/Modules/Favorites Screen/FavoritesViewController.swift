@@ -21,6 +21,8 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Favorites".localized()
+        
         setupBindings()
         setupUI()
     }
@@ -38,8 +40,8 @@ class FavoritesViewController: UIViewController {
     
     func setupBindings() {
         viewModel.errorCaught = {[weak self] alert in
-            let alert = UIAlertController(title: "ALERT", message: alert, preferredStyle: .alert)
-            alert.addAction(.init(title: "OK", style: .default))
+            let alert = UIAlertController(title: "ALERT".localized(), message: alert, preferredStyle: .alert)
+            alert.addAction(.init(title: "OK".localized(), style: .default))
             self?.present(alert, animated: true)
         }
         
@@ -50,9 +52,9 @@ class FavoritesViewController: UIViewController {
     }
     
     @IBAction func cleanButton(_ sender: Any) {
-        let alert = UIAlertController(title: "WARNING", message: "Are you sure to delete all favorites?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "WARNING".localized(), message: "Are you sure to delete all favorites?".localized(), preferredStyle: .alert)
     
-        let okAction = UIAlertAction(title: "DELETE", style: UIAlertAction.Style.default) { [self] UIAlertAction in
+        let okAction = UIAlertAction(title: "DELETE".localized(), style: UIAlertAction.Style.default) { [self] UIAlertAction in
             do {
                 tableViewHelper.deleteAllRecords(entity: "FavoriteGame")
             } catch {
@@ -60,7 +62,7 @@ class FavoritesViewController: UIViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "CANCEL", style: UIAlertAction.Style.cancel) {
+        let cancelAction = UIAlertAction(title: "CANCEL".localized(), style: UIAlertAction.Style.cancel) {
             UIAlertAction in
         }
         alert.addAction(okAction)

@@ -10,6 +10,9 @@ import CoreData
 
 class NoteTakeViewController: UIViewController {
     
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -19,6 +22,11 @@ class NoteTakeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        titleLabel.text = "Title".localized()
+        descriptionLabel.text = "Description".localized()
+        titleTextField.placeholder = "Insert title".localized()
         
         descriptionTextView.delegate = self
         
@@ -37,9 +45,9 @@ class NoteTakeViewController: UIViewController {
     func saveNote() {
         
         if titleTextField.text == "" {
-            titleTextField.text = "You should fill all the blanks."
+            titleTextField.text = "You should fill all the blanks.".localized()
         } else if descriptionTextView.text == "" {
-            descriptionTextView.text = "You should fill all the blanks."
+            descriptionTextView.text = "You should fill all the blanks.".localized()
         } else {
             
             if selectedNote == nil {
@@ -75,8 +83,6 @@ class NoteTakeViewController: UIViewController {
                     print("error")
                 }
             }
-            
-            
         }
     }
     

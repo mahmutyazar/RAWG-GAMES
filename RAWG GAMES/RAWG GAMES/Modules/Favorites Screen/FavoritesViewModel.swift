@@ -35,6 +35,6 @@ extension FavoritesViewModel: FavoritesModelProtocol {
     }
     
     func didDataCouldntFetch() {
-        errorCaught?("There is a problem. Try again later.")
+        errorCaught?("There is a problem. Try again later.".localized())
     }
 }

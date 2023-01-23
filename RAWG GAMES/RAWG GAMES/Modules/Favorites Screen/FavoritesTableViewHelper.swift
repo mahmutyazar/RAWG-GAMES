@@ -76,7 +76,6 @@ extension FavoriteTableViewHelper: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         cell.gameNameLabel.text = favoriteGames[indexPath.row].name ?? ""
-        cell.genreLabel.text = ""
         cell.gameImageView.kf.setImage(with: URL.init(string: favoriteGames[indexPath.row].imageURL ?? ""))
         cell.releasedLabel.text = favoriteGames[indexPath.row].released!.prefix(4).description
         cell.ratingLabel.text = "\(favoriteGames[indexPath.row].rating)/\(favoriteGames[indexPath.row].ratingTop)"

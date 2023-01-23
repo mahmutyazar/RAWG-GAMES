@@ -17,6 +17,8 @@ class NotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Notes".localized()
+        
         setupUI()
     }
     
@@ -61,9 +63,9 @@ class NotesViewController: UIViewController {
     @IBAction func cleanButton(_ sender: Any) {
         
         
-        let alert = UIAlertController(title: "WARNING", message: "All notes will be deleted. Are you sure?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "WARNING".localized(), message: "All notes will be deleted. Are you sure?".localized(), preferredStyle: .alert)
     
-        let okAction = UIAlertAction(title: "DELETE", style: UIAlertAction.Style.default) { [self] UIAlertAction in
+        let okAction = UIAlertAction(title: "DELETE".localized(), style: UIAlertAction.Style.default) { [self] UIAlertAction in
             do {
                 tableViewHelper.deleteAllRecords(entity: "Notes")
                 DispatchQueue.main.async {
@@ -75,7 +77,7 @@ class NotesViewController: UIViewController {
             }
         }
 
-        let cancelAction = UIAlertAction(title: "CANCEL", style: UIAlertAction.Style.cancel) {
+        let cancelAction = UIAlertAction(title: "CANCEL".localized(), style: UIAlertAction.Style.cancel) {
             UIAlertAction in
         }
         alert.addAction(okAction)

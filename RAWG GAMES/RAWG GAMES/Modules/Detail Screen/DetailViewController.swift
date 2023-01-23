@@ -34,17 +34,19 @@ class DetailViewController: UIViewController {
     
     func setupBindings() {
         viewModel?.errorCaughtOnDetail = {[weak self] alert in
-            let alert = UIAlertController(title: "ALERT", message: alert, preferredStyle: .alert)
-            alert.addAction(.init(title: "OK", style: .default))
+            let alert = UIAlertController(title: "ALERT".localized(), message: alert, preferredStyle: .alert)
+            alert.addAction(.init(title: "OK".localized(), style: .default))
             self?.present(alert, animated: true)
         }
         
         viewModel?.loadItems = {[weak self] item in
             self?.favoriteGame = item
             self?.detailImageView.kf.setImage(with: URL.init(string: item.backgroundImage ?? ""))
-            self?.yearLabel.text = "Released: \(item.released?.prefix(4).description ?? "")"
+            let released = "Released: ".localized()
+            self?.yearLabel.text = "\(released)\(item.released?.prefix(4).description ?? "")"
             self?.websiteLabel.text = item.website ?? ""
-            self?.rateLabel.text = "Rate: \(item.rating)/\(item.ratingTop)"
+            let rate = "Rate: ".localized()
+            self?.rateLabel.text = "\(rate)\(item.rating)/\(item.ratingTop)"
             self?.descriptionTextView.text = item.descriptionRaw ?? ""
         }
     }
@@ -115,7 +117,7 @@ extension DetailViewController: UNUserNotificationCenterDelegate {
     
     @objc func newNoteSaved() {
         let notificationManager: NotificationProtocol = LocalNotificationManager.shared
-        notificationManager.sendNotification(title: "Success!", message: "You added this game to favorites!")
+        notificationManager.sendNotification(title: "Success!".localized(), message: "You have been added this game to favorites!".localized())
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,

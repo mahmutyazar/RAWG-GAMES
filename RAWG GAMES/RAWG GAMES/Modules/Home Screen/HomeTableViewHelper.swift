@@ -57,15 +57,20 @@ extension HomeTableViewHelper: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let detailsVC = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
-            return
+        if InternetManager.shared.isInternetActive() {
+            let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            guard let detailsVC = storyBoard.instantiateViewController(withIdentifier: "detailViewController") as? DetailViewController else {
+                return
+            }
+            let id = searchResults[indexPath.row].id
+            detailsVC.getID(id)
+            detailsVC.title = searchResults[indexPath.row].name
+            
+            navigationController?.pushViewController(detailsVC, animated: true)
+        } else {
+            viewModel?.errorCaught!("You can not see the details of games when you're offline. Please connect to internet.".localized())
         }
-        let id = searchResults[indexPath.row].id
-        detailsVC.getID(id)
-        detailsVC.title = searchResults[indexPath.row].name
         
-        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
@@ -105,7 +110,7 @@ extension HomeTableViewHelper: UISearchBarDelegate {
         let requestWorkItem = DispatchWorkItem { [weak self] in
             if let searchText = searchBar.text {
                 
-                AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)&search=\(searchText)&page_size=20").responseDecodable(of: ApiGame.self) { search in
+                AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)&search=\(searchText)&page_size=30").responseDecodable(of: ApiGame.self) { search in
                     
                     guard let response = search.value else {
                         print("no data")
@@ -120,6 +125,6 @@ extension HomeTableViewHelper: UISearchBarDelegate {
             }
         }
         pendingRequestWorkItem = requestWorkItem
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250), execute: requestWorkItem)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: requestWorkItem)
     }
 }

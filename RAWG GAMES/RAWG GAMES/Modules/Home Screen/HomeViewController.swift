@@ -24,7 +24,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = NSLocalizedString("All Games", comment: "")
+        title = "Random Games".localized()
+        searchBar.placeholder = "Search whatever you looking for...".localized()
+        segmentedControl.setTitle("RATE".localized(), forSegmentAt: 1)
         
         setupAnimation()
         setupUI()
@@ -51,8 +53,6 @@ class HomeViewController: UIViewController {
     @IBAction func segmentPressed(_ sender: UISegmentedControl) {
         sortTable()
     }
-    
-    
 }
 
 
@@ -65,8 +65,8 @@ extension HomeViewController {
     func setupBindings() {
         
         viewModel.errorCaught = {[weak self] alert in
-            let alert = UIAlertController(title: "ALERT", message: alert, preferredStyle: .alert)
-            alert.addAction(.init(title: "OK", style: .default))
+            let alert = UIAlertController(title: "ALERT".localized(), message: alert, preferredStyle: .alert)
+            alert.addAction(.init(title: "OK".localized(), style: .default))
             self?.present(alert, animated: true)
         }
         

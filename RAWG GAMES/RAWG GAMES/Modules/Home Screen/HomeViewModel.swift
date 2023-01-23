@@ -42,7 +42,7 @@ extension HomeViewModel: HomeModelProtocol {
     }
     
     func didDataCouldntFetch() {
-        errorCaught?("Seems like you're not connected to Internet. Please check your connection.")
+        errorCaught?("Seems like you're not connected to Internet. Please check your connection.".localized())
     }
 }
 

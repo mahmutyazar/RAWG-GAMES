@@ -15,11 +15,9 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
-    
     @IBOutlet weak var releasedLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
-    @IBOutlet weak var genreLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,8 +30,5 @@ class HomeTableViewCell: UITableViewCell {
         gameNameLabel.text = model.name
         releasedLabel.text = model.released.prefix(4).description
         ratingLabel.text = "\(model.rating)/\(model.ratingTop)"
-        genreLabel.text = ""
-//        genreLabel.text = model.genre.map{ element in element.name ?? ""}.joined(separator: ",")
-        
     }
 }

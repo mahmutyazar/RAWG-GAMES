@@ -55,19 +55,13 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Favorites" largeTitleDisplayMode="always" id="Mrs-5q-FDt">
-                        <centerItemGroups>
-                            <barButtonItemGroup customizationDisposition="fixed" id="Kv2-Uc-8E8">
-                                <barButtonItems>
-                                    <barButtonItem title="Delete All Favorites" style="done" id="WZL-XW-4jD">
-                                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                                        <color key="tintColor" red="0.97538524869999998" green="0.34811282160000001" blue="0.31630063060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="cleanButton:" destination="jCh-cH-MqF" id="NYG-B4-xTE"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </barButtonItems>
-                            </barButtonItemGroup>
-                        </centerItemGroups>
+                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" style="done" id="WZL-XW-4jD">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" red="0.97538524869999998" green="0.34811282160000001" blue="0.31630063060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cleanButton:" destination="jCh-cH-MqF" id="NYG-B4-xTE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -201,8 +195,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="deleteButton" destination="OJG-H9-ZlU" id="4gz-Ev-amD"/>
+                        <outlet property="descriptionLabel" destination="GGO-Wh-4nU" id="fWW-RT-thW"/>
                         <outlet property="descriptionTextView" destination="nF7-u5-aNK" id="OTa-h4-hbX"/>
                         <outlet property="saveButton" destination="FpH-20-hfQ" id="qTt-Yk-EL5"/>
+                        <outlet property="titleLabel" destination="rcj-AZ-wNS" id="gAB-qr-xVM"/>
                         <outlet property="titleTextField" destination="xVo-oX-NSH" id="LJk-hJ-wya"/>
                     </connections>
                 </viewController>
@@ -248,7 +244,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="HomeTitle" id="CQP-pa-DQP" colorLabel="IBBuiltInLabel-Red">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="5kS-zK-Dmu">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="juY-Ge-bp6">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="juY-Ge-bp6">
                                 <rect key="frame" x="243" y="5.6666666666666679" width="131" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -423,6 +419,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="note" catalog="system" width="128" height="107"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <image name="trash-bin" width="256" height="256"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

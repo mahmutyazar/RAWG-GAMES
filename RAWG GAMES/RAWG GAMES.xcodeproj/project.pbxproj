@@ -21,6 +21,7 @@
 		2A35073129754E4400435C28 /* HomeTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35073029754E4400435C28 /* HomeTableViewHelper.swift */; };
 		2A35073429754E5D00435C28 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35073229754E5D00435C28 /* HomeTableViewCell.swift */; };
 		2A35073529754E5D00435C28 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A35073329754E5D00435C28 /* HomeTableViewCell.xib */; };
+		2A7231C2297F2C3D00C0C800 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7231C1297F2C3D00C0C800 /* Localizer.swift */; };
 		2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F329749E3B00C44A56 /* AppDelegate.swift */; };
 		2A8798F629749E3B00C44A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F529749E3B00C44A56 /* SceneDelegate.swift */; };
 		2A8798F829749E3B00C44A56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F729749E3B00C44A56 /* HomeViewController.swift */; };
@@ -75,6 +76,9 @@
 		2A35073029754E4400435C28 /* HomeTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewHelper.swift; sourceTree = "<group>"; };
 		2A35073229754E5D00435C28 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		2A35073329754E5D00435C28 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		2A7231C1297F2C3D00C0C800 /* Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
+		2A7231C4297F2FF700C0C800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		2A7231C6297F2FFD00C0C800 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		2A8798F029749E3B00C44A56 /* RAWG GAMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAWG GAMES.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8798F329749E3B00C44A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A8798F529749E3B00C44A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 			path = LottieAnimation;
 			sourceTree = "<group>";
 		};
+		2A7231C0297F2C0E00C0C800 /* Localizer */ = {
+			isa = PBXGroup;
+			children = (
+				2A8F9499297C764C00BD72DE /* Localizable.strings */,
+				2A7231C1297F2C3D00C0C800 /* Localizer.swift */,
+			);
+			path = Localizer;
+			sourceTree = "<group>";
+		};
 		2A8798E729749E3B00C44A56 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 			children = (
 				2A8799262974A40E00C44A56 /* Modules */,
 				2A1507F2297B0D8700BAEDAE /* Constants */,
+				2A7231C0297F2C0E00C0C800 /* Localizer */,
 				2A1507F3297B1EF000BAEDAE /* Managers */,
 				2A8798F329749E3B00C44A56 /* AppDelegate.swift */,
 				2A8798F529749E3B00C44A56 /* SceneDelegate.swift */,
@@ -191,7 +205,6 @@
 				2A87990129749E3E00C44A56 /* LaunchScreen.storyboard */,
 				2A87990429749E3E00C44A56 /* Info.plist */,
 				2A8798FC29749E3B00C44A56 /* RAWG_GAMES.xcdatamodeld */,
-				2A8F9499297C764C00BD72DE /* Localizable.strings */,
 			);
 			path = "RAWG GAMES";
 			sourceTree = "<group>";
@@ -444,6 +457,7 @@
 				2A3507232975333B00435C28 /* ServiceModel.swift in Sources */,
 				2A8799322974A59200C44A56 /* NotesViewController.swift in Sources */,
 				2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */,
+				2A7231C2297F2C3D00C0C800 /* Localizer.swift in Sources */,
 				2A1507F5297B1F1C00BAEDAE /* InternetManager.swift in Sources */,
 				2A8799302974A57B00C44A56 /* FavoritesViewController.swift in Sources */,
 				2A8798F629749E3B00C44A56 /* SceneDelegate.swift in Sources */,
@@ -491,6 +505,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				2A8798FA29749E3B00C44A56 /* Base */,
+				2A7231C4297F2FF700C0C800 /* en */,
+				2A7231C6297F2FFD00C0C800 /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
