@@ -11,6 +11,8 @@
 		2A1507F5297B1F1C00BAEDAE /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1507F4297B1F1C00BAEDAE /* InternetManager.swift */; };
 		2A1B6623297DAB04007EA21E /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1B6621297DAB04007EA21E /* NotesTableViewCell.swift */; };
 		2A1B6624297DAB04007EA21E /* NotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1B6622297DAB04007EA21E /* NotesTableViewCell.xib */; };
+		2A2C35EE297E014300C6EB67 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2A2C35ED297E014300C6EB67 /* Lottie */; };
+		2A2C35F0297E044C00C6EB67 /* gaming.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A2C35EF297E044C00C6EB67 /* gaming.json */; };
 		2A35071A2975289F00435C28 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3507192975289F00435C28 /* Alamofire */; };
 		2A35071D297528EC00435C28 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2A35071C297528EC00435C28 /* Kingfisher */; };
 		2A35071F29752EC600435C28 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35071E29752EC600435C28 /* HomeModel.swift */; };
@@ -65,6 +67,7 @@
 		2A1507F4297B1F1C00BAEDAE /* InternetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetManager.swift; sourceTree = "<group>"; };
 		2A1B6621297DAB04007EA21E /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		2A1B6622297DAB04007EA21E /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
+		2A2C35EF297E044C00C6EB67 /* gaming.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gaming.json; sourceTree = "<group>"; };
 		2A35071E29752EC600435C28 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		2A35072029752EE900435C28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2A3507222975333B00435C28 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 			files = (
 				2A35071D297528EC00435C28 /* Kingfisher in Frameworks */,
 				2A35071A2975289F00435C28 /* Alamofire in Frameworks */,
+				2A2C35EE297E014300C6EB67 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +145,14 @@
 				2A1507F4297B1F1C00BAEDAE /* InternetManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		2A2C35F1297E066500C6EB67 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2A2C35EF297E044C00C6EB67 /* gaming.json */,
+			);
+			path = LottieAnimation;
 			sourceTree = "<group>";
 		};
 		2A8798E729749E3B00C44A56 = {
@@ -213,6 +225,7 @@
 		2A8799272974A41900C44A56 /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
+				2A2C35F1297E066500C6EB67 /* LottieAnimation */,
 				2A35071E29752EC600435C28 /* HomeModel.swift */,
 				2A35072029752EE900435C28 /* HomeViewModel.swift */,
 				2A8798F729749E3B00C44A56 /* HomeViewController.swift */,
@@ -284,6 +297,7 @@
 			packageProductDependencies = (
 				2A3507192975289F00435C28 /* Alamofire */,
 				2A35071C297528EC00435C28 /* Kingfisher */,
+				2A2C35ED297E014300C6EB67 /* Lottie */,
 			);
 			productName = "RAWG GAMES";
 			productReference = 2A8798F029749E3B00C44A56 /* RAWG GAMES.app */;
@@ -361,6 +375,7 @@
 			packageReferences = (
 				2A3507182975289F00435C28 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2A35071B297528EC00435C28 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2A2C35EC297E014300C6EB67 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 2A8798F129749E3B00C44A56 /* Products */;
 			projectDirPath = "";
@@ -380,6 +395,7 @@
 			files = (
 				2A8F9497297C764C00BD72DE /* Localizable.strings in Resources */,
 				2A87990329749E3E00C44A56 /* LaunchScreen.storyboard in Resources */,
+				2A2C35F0297E044C00C6EB67 /* gaming.json in Resources */,
 				2A87990029749E3E00C44A56 /* Assets.xcassets in Resources */,
 				2A35073529754E5D00435C28 /* HomeTableViewCell.xib in Resources */,
 				2A8798FB29749E3B00C44A56 /* Main.storyboard in Resources */,
@@ -785,6 +801,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A2C35EC297E014300C6EB67 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		2A3507182975289F00435C28 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -804,6 +828,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A2C35ED297E014300C6EB67 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A2C35EC297E014300C6EB67 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		2A3507192975289F00435C28 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2A3507182975289F00435C28 /* XCRemoteSwiftPackageReference "Alamofire" */;

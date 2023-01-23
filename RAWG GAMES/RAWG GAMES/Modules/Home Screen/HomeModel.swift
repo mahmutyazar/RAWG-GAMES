@@ -65,6 +65,7 @@ class HomeModel {
             
             do {
                 try context.save()
+                
             } catch {
                 print("Main page could not be cached to CoreData.")
             }

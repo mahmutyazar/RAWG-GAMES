@@ -19,7 +19,9 @@ class HomeViewModel {
     }
     
     func didViewLoad() {
-        model.fetchData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+            self.model.fetchData()
+        })
     }
 }
 
