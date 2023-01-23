@@ -45,7 +45,7 @@ class HomeTableViewHelper: NSObject {
         tableView?.delegate = self
         searchBar?.delegate = self
     }
-    
+
     func setItems(_ items: [RowItem]) {
         self.items = items
         self.searchResults = items
@@ -91,11 +91,6 @@ extension HomeTableViewHelper: UITableViewDataSource {
         cell.backgroundColor = .systemGray6
         return cell
     }
-    
-    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        <#code#>
-    //    }
-    
 }
 
 

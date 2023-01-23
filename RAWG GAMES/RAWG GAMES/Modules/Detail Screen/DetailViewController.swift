@@ -72,21 +72,7 @@ class DetailViewController: UIViewController {
     }
     
     func deleteFavoriteFromCoreData() {
-        
-        let fetchRequest: NSFetchRequest<FavoriteGame>
-        fetchRequest = FavoriteGame.fetchRequest()
-        
-        fetchRequest.predicate = NSPredicate(format: "id LIKE %@","\(favoriteGame?.gameID ?? 0)")
-        
-        do {
-            let objects = try Constants.context.fetch(fetchRequest)
-            
-            
-        } catch {
-            print("yok")
-        }
-        
-        
+
     }
     
     
@@ -97,8 +83,11 @@ class DetailViewController: UIViewController {
         setButtonBackground(view: sender, on: UIImage(systemName: "heart.fill")!, off: UIImage(systemName: "heart")!, onOffStatus: isFavorite)
         
         if isFavorite == true {
+            localNotification()
+            UNUserNotificationCenter.current().delegate = self
             saveFavoriteToCoreData(favoriteGame!)
-            
+            NotificationCenter.default.post(name: Notification.Name("NoteNotification"), object: nil)
+
         } else {
             deleteFavoriteFromCoreData()
         }
@@ -115,5 +104,23 @@ class DetailViewController: UIViewController {
     
     func getID(_ id: Int) {
         viewModel = DetailViewModel(id: id)
+    }
+}
+
+extension DetailViewController: UNUserNotificationCenterDelegate {
+    
+    func localNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(newNoteSaved), name: Notification.Name("NoteNotification"), object: nil)
+    }
+    
+    @objc func newNoteSaved() {
+        let notificationManager: NotificationProtocol = LocalNotificationManager.shared
+        notificationManager.sendNotification(title: "Success!", message: "You added this game to favorites!")
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.sound, .banner, .badge, .list])
     }
 }
