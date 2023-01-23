@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Lottie
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let animationView = LottieAnimationView()
     private let viewModel = HomeViewModel()
     private var tableViewHelper: HomeTableViewHelper!
 
@@ -23,11 +25,23 @@ class HomeViewController: UIViewController {
     
         title = NSLocalizedString("HomeTitle", comment: "")
         
+        setupAnimation()
         setupUI()
         setupBindings()
         viewModel.didViewLoad()
     
     }
+    
+    private func setupAnimation() {
+        animationView.animation = LottieAnimation.named("gaming")
+        animationView.frame = view.bounds
+        animationView.backgroundColor = .systemGray6
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        view.addSubview(animationView)
+    }
+    
 }
 
 extension HomeViewController {
@@ -46,6 +60,8 @@ extension HomeViewController {
         
         viewModel.loadItems = {[weak self] items in
             self?.tableViewHelper.setItems(items)
+            self!.animationView.stop()
+            self!.animationView.isHidden = true
             self!.items = items
         }
     }
