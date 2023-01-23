@@ -24,22 +24,28 @@ class DetailModel {
     }
     
     private(set) var detailData: ApiGameDetail?
+    private(set) var cacheDetailData: [FavoriteGame] = []
     
     weak var delegate: DetailModelProtocol?
     
     func fetchDetailData() {
         
-        guard let gameId = gameId else {return}
-        
-        AF.request("\(Constants.sharedURL)/\(gameId)?key=\(Constants.apiKey)").responseDecodable(of: ApiGameDetail.self) { detail in
-            guard let response = detail.value else {
-                self.delegate?.didDetailDataCouldntFetch()
-                print("no detail")
-                return
-            }
-            self.detailData = response
-            self.delegate?.didDetailDataFetch()
+        if InternetManager.shared.isInternetActive() {
+            guard let gameId = gameId else {return}
             
+            AF.request("\(Constants.sharedURL)/\(gameId)?key=\(Constants.apiKey)").responseDecodable(of: ApiGameDetail.self) { detail in
+                guard let response = detail.value else {
+                    self.delegate?.didDetailDataCouldntFetch()
+                    print("no detail")
+                    return
+                }
+                self.detailData = response
+                self.delegate?.didDetailDataFetch()
+            
+                
+            }
+        } else {
+                //retrieve from CoreData
         }
     }
 }

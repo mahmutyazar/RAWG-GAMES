@@ -44,3 +44,15 @@ struct Game {
     var ratingTop: Int
     var descriptionRaw: String?
 }
+
+struct GameDetail {
+    var gameID: Int?
+    var slug: String?
+    var name: String?
+    var released: String?
+    var backgroundImage: String?
+    var website: String?
+    var rating: Double
+    var ratingTop: Int
+    var descriptionRaw: String?
+}

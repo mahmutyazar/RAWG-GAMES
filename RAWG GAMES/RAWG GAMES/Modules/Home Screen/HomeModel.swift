@@ -19,7 +19,7 @@ protocol HomeModelProtocol: AnyObject {
 class HomeModel {
         
     private(set) var data: [Result] = []
-    private(set) var genre: [[Genre]] = []
+//    private(set) var genre: [[Genre]] = []
     private(set) var cacheData: [MainGameList] = []
     private var nextPageURL: String = ""
     
@@ -37,7 +37,7 @@ class HomeModel {
                 
                 self.nextPageURL = response.next
                 self.data = response.results ?? []
-                self.genre = self.data.map{$0.genres!}.compactMap{$0}
+//                self.genre = self.data.map{$0.genres!}.compactMap{$0}
                 self.delegate?.didDataFetch()
                 
                 for item in self.data {

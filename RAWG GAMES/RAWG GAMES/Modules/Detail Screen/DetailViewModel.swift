@@ -33,6 +33,6 @@ extension DetailViewModel: DetailModelProtocol {
     }
     
     func didDetailDataCouldntFetch() {
-        errorCaughtOnDetail?("Seems like you're not connected to Internet. Please check your connection.")
+        errorCaughtOnDetail?("You can not see the details of games when you're offline. Please connect to internet.")
     }
 }

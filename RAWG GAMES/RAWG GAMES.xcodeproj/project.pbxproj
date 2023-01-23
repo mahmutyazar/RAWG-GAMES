@@ -17,7 +17,7 @@
 		2A35071D297528EC00435C28 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2A35071C297528EC00435C28 /* Kingfisher */; };
 		2A35071F29752EC600435C28 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35071E29752EC600435C28 /* HomeModel.swift */; };
 		2A35072129752EE900435C28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35072029752EE900435C28 /* HomeViewModel.swift */; };
-		2A3507232975333B00435C28 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3507222975333B00435C28 /* Service.swift */; };
+		2A3507232975333B00435C28 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3507222975333B00435C28 /* ServiceModel.swift */; };
 		2A35073129754E4400435C28 /* HomeTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35073029754E4400435C28 /* HomeTableViewHelper.swift */; };
 		2A35073429754E5D00435C28 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35073229754E5D00435C28 /* HomeTableViewCell.swift */; };
 		2A35073529754E5D00435C28 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A35073329754E5D00435C28 /* HomeTableViewCell.xib */; };
@@ -70,7 +70,7 @@
 		2A2C35EF297E044C00C6EB67 /* gaming.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gaming.json; sourceTree = "<group>"; };
 		2A35071E29752EC600435C28 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		2A35072029752EE900435C28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		2A3507222975333B00435C28 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2A3507222975333B00435C28 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		2A35073029754E4400435C28 /* HomeTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewHelper.swift; sourceTree = "<group>"; };
 		2A35073229754E5D00435C28 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		2A35073329754E5D00435C28 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 				2A35073029754E4400435C28 /* HomeTableViewHelper.swift */,
 				2A35073229754E5D00435C28 /* HomeTableViewCell.swift */,
 				2A35073329754E5D00435C28 /* HomeTableViewCell.xib */,
-				2A3507222975333B00435C28 /* Service.swift */,
+				2A3507222975333B00435C28 /* ServiceModel.swift */,
 			);
 			path = "Home Screen";
 			sourceTree = "<group>";
@@ -437,7 +437,7 @@
 				2A87992E2974A55600C44A56 /* DetailViewController.swift in Sources */,
 				2A1B6623297DAB04007EA21E /* NotesTableViewCell.swift in Sources */,
 				2A8799342974A5B100C44A56 /* NoteTakeViewController.swift in Sources */,
-				2A3507232975333B00435C28 /* Service.swift in Sources */,
+				2A3507232975333B00435C28 /* ServiceModel.swift in Sources */,
 				2A8799322974A59200C44A56 /* NotesViewController.swift in Sources */,
 				2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */,
 				2A1507F5297B1F1C00BAEDAE /* InternetManager.swift in Sources */,

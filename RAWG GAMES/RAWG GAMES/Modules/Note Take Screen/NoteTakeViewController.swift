@@ -108,7 +108,7 @@ class NoteTakeViewController: UIViewController {
 }
 
 extension NoteTakeViewController: UITextViewDelegate {
-
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if titleTextField.text != nil && descriptionTextView.text != nil {
             saveButton.isEnabled = true

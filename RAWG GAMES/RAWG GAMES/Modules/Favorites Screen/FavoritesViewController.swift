@@ -27,7 +27,7 @@ class FavoritesViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-       
+        
         viewModel.didViewLoad()
         favoritesTableView.reloadData()
     }

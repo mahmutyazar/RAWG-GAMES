@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        title = NSLocalizedString("HomeTitle", comment: "")
+        title = NSLocalizedString("All Games", comment: "")
         
         setupAnimation()
         setupUI()

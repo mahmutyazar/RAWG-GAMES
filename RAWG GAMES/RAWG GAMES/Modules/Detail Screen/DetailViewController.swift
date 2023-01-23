@@ -39,18 +39,18 @@ class DetailViewController: UIViewController {
             self?.present(alert, animated: true)
         }
         
-            viewModel?.loadItems = {[weak self] item in
-                self?.favoriteGame = item
-                self?.detailImageView.kf.setImage(with: URL.init(string: item.backgroundImage ?? ""))
-                self?.yearLabel.text = "Released: \(item.released?.prefix(4).description ?? "")"
-                self?.websiteLabel.text = item.website ?? ""
-                self?.rateLabel.text = "Rate: \(item.rating)/\(item.ratingTop)"
-                self?.descriptionTextView.text = item.descriptionRaw ?? ""
-            }
+        viewModel?.loadItems = {[weak self] item in
+            self?.favoriteGame = item
+            self?.detailImageView.kf.setImage(with: URL.init(string: item.backgroundImage ?? ""))
+            self?.yearLabel.text = "Released: \(item.released?.prefix(4).description ?? "")"
+            self?.websiteLabel.text = item.website ?? ""
+            self?.rateLabel.text = "Rate: \(item.rating)/\(item.ratingTop)"
+            self?.descriptionTextView.text = item.descriptionRaw ?? ""
+        }
     }
     
     func saveFavoriteToCoreData(_ data: Game) {
-
+        
         if let entity = NSEntityDescription.entity(forEntityName: "FavoriteGame", in: Constants.context) {
             
             let gameObject = NSManagedObject(entity: entity, insertInto: Constants.context)
@@ -70,7 +70,25 @@ class DetailViewController: UIViewController {
             }
         }
     }
-
+    
+    func deleteFavoriteFromCoreData() {
+        
+        let fetchRequest: NSFetchRequest<FavoriteGame>
+        fetchRequest = FavoriteGame.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(format: "id LIKE %@","\(favoriteGame?.gameID ?? 0)")
+        
+        do {
+            let objects = try Constants.context.fetch(fetchRequest)
+            
+            
+        } catch {
+            print("yok")
+        }
+        
+        
+    }
+    
     
     @IBAction func favoriteButton(_ sender: UIButton) {
         
@@ -82,7 +100,7 @@ class DetailViewController: UIViewController {
             saveFavoriteToCoreData(favoriteGame!)
             
         } else {
-           print("deleted")
+            deleteFavoriteFromCoreData()
         }
     }
     

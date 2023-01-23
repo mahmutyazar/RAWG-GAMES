@@ -38,20 +38,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-NU-gGx">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="143" width="390" height="701"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c0W-vo-vK1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="IDG-NU-gGx" firstAttribute="top" secondItem="c0W-vo-vK1" secondAttribute="top" constant="-143" id="8jW-n4-79Y"/>
-                            <constraint firstItem="IDG-NU-gGx" firstAttribute="leading" secondItem="7Bl-o2-cDu" secondAttribute="leading" id="ZcC-qu-xtY"/>
-                            <constraint firstItem="IDG-NU-gGx" firstAttribute="centerX" secondItem="7Bl-o2-cDu" secondAttribute="centerX" id="e4H-gl-Rzs"/>
-                            <constraint firstAttribute="trailing" secondItem="IDG-NU-gGx" secondAttribute="trailing" id="oar-q3-v4H"/>
-                            <constraint firstItem="IDG-NU-gGx" firstAttribute="bottom" secondItem="7Bl-o2-cDu" secondAttribute="bottom" id="u8F-1Q-gCS"/>
+                            <constraint firstItem="IDG-NU-gGx" firstAttribute="top" secondItem="c0W-vo-vK1" secondAttribute="top" id="YqD-6G-1hB"/>
+                            <constraint firstAttribute="bottom" secondItem="IDG-NU-gGx" secondAttribute="bottom" id="d1W-5b-oK9"/>
+                            <constraint firstItem="IDG-NU-gGx" firstAttribute="leading" secondItem="c0W-vo-vK1" secondAttribute="leading" id="gae-yJ-hDp"/>
+                            <constraint firstItem="IDG-NU-gGx" firstAttribute="trailing" secondItem="c0W-vo-vK1" secondAttribute="trailing" id="mcE-lD-aI2"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -91,6 +90,7 @@
                                 <rect key="frame" x="0.0" y="91" width="390" height="670"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
                             <view contentMode="scaleToFill" id="h1T-Ph-ySh">
                                 <rect key="frame" x="279" y="633" width="80" height="80"/>
@@ -167,6 +167,7 @@
                                 <rect key="frame" x="72" y="345" width="247" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJG-H9-ZlU">
@@ -183,7 +184,7 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mVB-Ib-IJV">
-                                <rect key="frame" x="-2" y="47" width="390" height="44"/>
+                                <rect key="frame" x="-4" y="47" width="391" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" systemColor="systemGray6Color"/>
                             </navigationBar>
