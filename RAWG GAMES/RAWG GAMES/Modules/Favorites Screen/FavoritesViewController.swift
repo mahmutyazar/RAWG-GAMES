@@ -12,6 +12,8 @@ import Kingfisher
 class FavoritesViewController: UIViewController {
     
     @IBOutlet weak var favoritesTableView: UITableView!
+    @IBOutlet weak var favoritesView: UIView!
+    @IBOutlet weak var infoLabel: UILabel!
     
     private var tableViewHelper: FavoriteTableViewHelper!
     private let viewModel = FavoritesViewModel()
@@ -22,6 +24,7 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Favorites".localized()
+        infoLabel.text = "Favorites list is empty.".localized()
         
         setupBindings()
         setupUI()
@@ -34,7 +37,16 @@ class FavoritesViewController: UIViewController {
         favoritesTableView.reloadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if favoriteGames.count > 0 {
+            self.favoritesView.isHidden = true
+        } else {
+            self.favoritesView.isHidden = false
+        }
+    }
+    
     func setupUI() {
+        
         tableViewHelper = .init(tableView: favoritesTableView, navigationController: navigationController!)
     }
     
@@ -57,6 +69,9 @@ class FavoritesViewController: UIViewController {
         let okAction = UIAlertAction(title: "DELETE".localized(), style: UIAlertAction.Style.default) { [self] UIAlertAction in
             do {
                 tableViewHelper.deleteAllRecords(entity: "FavoriteGame")
+                self.favoriteGames.removeAll()
+                self.favoritesTableView?.reloadData()
+                favoritesView.isHidden = false
             } catch {
                 print("could not delete")
             }

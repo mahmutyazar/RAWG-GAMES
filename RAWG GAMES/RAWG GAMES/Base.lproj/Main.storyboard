@@ -39,18 +39,39 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-NU-gGx">
                                 <rect key="frame" x="0.0" y="143" width="390" height="701"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7o-Ga-BMd">
+                                <rect key="frame" x="16" y="358" width="358" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite list is empty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eI-w4-chD">
+                                        <rect key="frame" x="89.333333333333329" y="54.000000000000007" width="179.66666666666669" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="0eI-w4-chD" firstAttribute="centerY" secondItem="u7o-Ga-BMd" secondAttribute="centerY" id="HWP-LQ-0VA"/>
+                                    <constraint firstItem="0eI-w4-chD" firstAttribute="centerX" secondItem="u7o-Ga-BMd" secondAttribute="centerX" id="cR9-mF-OUr"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="c0W-vo-vK1"/>
+                        <viewLayoutGuide key="safeArea" id="dhP-vJ-ACf"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="IDG-NU-gGx" firstAttribute="top" secondItem="c0W-vo-vK1" secondAttribute="top" id="YqD-6G-1hB"/>
-                            <constraint firstAttribute="bottom" secondItem="IDG-NU-gGx" secondAttribute="bottom" id="d1W-5b-oK9"/>
-                            <constraint firstItem="IDG-NU-gGx" firstAttribute="leading" secondItem="c0W-vo-vK1" secondAttribute="leading" id="gae-yJ-hDp"/>
-                            <constraint firstItem="IDG-NU-gGx" firstAttribute="trailing" secondItem="c0W-vo-vK1" secondAttribute="trailing" id="mcE-lD-aI2"/>
+                            <constraint firstItem="IDG-NU-gGx" firstAttribute="top" secondItem="7Bl-o2-cDu" secondAttribute="topMargin" id="Caf-fI-CjD"/>
+                            <constraint firstItem="u7o-Ga-BMd" firstAttribute="leading" secondItem="IDG-NU-gGx" secondAttribute="leadingMargin" constant="-4" id="CkR-G2-G5C"/>
+                            <constraint firstAttribute="trailing" secondItem="IDG-NU-gGx" secondAttribute="trailing" id="EgR-EK-NMZ"/>
+                            <constraint firstItem="IDG-NU-gGx" firstAttribute="leading" secondItem="7Bl-o2-cDu" secondAttribute="leading" id="GfM-Vb-YWv"/>
+                            <constraint firstItem="u7o-Ga-BMd" firstAttribute="centerY" secondItem="7Bl-o2-cDu" secondAttribute="centerY" id="QV3-jk-khq"/>
+                            <constraint firstAttribute="bottom" secondItem="IDG-NU-gGx" secondAttribute="bottom" id="j65-t3-b3C"/>
+                            <constraint firstItem="u7o-Ga-BMd" firstAttribute="centerX" secondItem="IDG-NU-gGx" secondAttribute="centerX" id="oJf-us-G1L"/>
+                            <constraint firstItem="u7o-Ga-BMd" firstAttribute="top" secondItem="IDG-NU-gGx" secondAttribute="top" constant="215" id="wLu-Db-ePL"/>
+                            <constraint firstItem="u7o-Ga-BMd" firstAttribute="centerX" secondItem="7Bl-o2-cDu" secondAttribute="centerX" id="ydb-OS-g9s"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -66,6 +87,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="favoritesTableView" destination="IDG-NU-gGx" id="AS1-Aq-q27"/>
+                        <outlet property="favoritesView" destination="u7o-Ga-BMd" id="l1Z-IC-DRp"/>
+                        <outlet property="infoLabel" destination="0eI-w4-chD" id="0nm-Q8-GOG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0N-tc-ih3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -80,12 +103,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PYi-X5-ceO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PYi-X5-ceO">
                                 <rect key="frame" x="0.0" y="91" width="390" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBg-n0-APx">
+                                <rect key="frame" x="16" y="377" width="358" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes list is empty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvG-MO-DVw">
+                                        <rect key="frame" x="89.333333333333329" y="35" width="179.33333333333337" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="LvG-MO-DVw" firstAttribute="centerX" secondItem="ZBg-n0-APx" secondAttribute="centerX" id="Hbq-se-bW2"/>
+                                    <constraint firstItem="LvG-MO-DVw" firstAttribute="centerY" secondItem="ZBg-n0-APx" secondAttribute="centerY" id="KeC-Nu-nSA"/>
+                                    <constraint firstItem="LvG-MO-DVw" firstAttribute="leading" secondItem="ZBg-n0-APx" secondAttribute="leading" constant="89.333333333333343" id="Z7E-Nc-hxU"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" id="h1T-Ph-ySh">
                                 <rect key="frame" x="279" y="633" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,9 +148,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DZS-2A-9Be"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="PYi-X5-ceO" firstAttribute="leading" secondItem="DZS-2A-9Be" secondAttribute="leading" id="1d1-8W-vfQ"/>
+                            <constraint firstItem="ZBg-n0-APx" firstAttribute="centerY" secondItem="jbf-jE-GPR" secondAttribute="centerY" id="4ZG-ex-6yh"/>
+                            <constraint firstItem="ZBg-n0-APx" firstAttribute="top" secondItem="DZS-2A-9Be" secondAttribute="top" constant="234" id="6FB-bc-ktM"/>
+                            <constraint firstItem="ZBg-n0-APx" firstAttribute="leading" secondItem="jbf-jE-GPR" secondAttribute="leadingMargin" id="8j3-F0-T1N"/>
+                            <constraint firstItem="ZBg-n0-APx" firstAttribute="centerX" secondItem="jbf-jE-GPR" secondAttribute="centerX" id="9O8-M6-x6Q"/>
+                            <constraint firstItem="PYi-X5-ceO" firstAttribute="top" secondItem="jbf-jE-GPR" secondAttribute="topMargin" constant="-52" id="J8Y-JW-lW3"/>
+                            <constraint firstItem="ZBg-n0-APx" firstAttribute="centerX" secondItem="PYi-X5-ceO" secondAttribute="centerX" id="n14-hg-HCB"/>
+                            <constraint firstItem="PYi-X5-ceO" firstAttribute="bottom" secondItem="DZS-2A-9Be" secondAttribute="bottom" id="yUj-Y4-9VZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="eYe-dn-mk5">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="trash" id="oNF-ku-gef">
+                            <color key="tintColor" red="0.97538524869999998" green="0.34811282160000001" blue="0.31630063060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cleanButton:" destination="D6N-qe-hph" id="HZF-y8-j8H"/>
                             </connections>
@@ -119,6 +169,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButtonView" destination="h1T-Ph-ySh" id="Q2j-uU-EFu"/>
+                        <outlet property="infoLabel" destination="LvG-MO-DVw" id="FRt-UN-wM2"/>
+                        <outlet property="infoView" destination="ZBg-n0-APx" id="h0i-Vb-kHR"/>
                         <outlet property="notesTableView" destination="PYi-X5-ceO" id="982-AI-qOl"/>
                         <segue destination="92A-MY-K2j" kind="show" identifier="editNote" id="l23-XK-DDF"/>
                         <segue destination="92A-MY-K2j" kind="show" identifier="toDetail" id="ZYU-fH-B3t"/>
@@ -214,12 +266,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KsD-LP-N6h">
-                                <rect key="frame" x="0.0" y="199" width="390" height="513"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="separatorColor" systemColor="systemGray6Color"/>
-                            </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search whatever you looking for..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IA6-7Y-2KC">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search whatever you looking for..." translatesAutoresizingMaskIntoConstraints="NO" id="IA6-7Y-2KC">
                                 <rect key="frame" x="0.0" y="143" width="390" height="56"/>
                                 <color key="barTintColor" systemColor="systemGray6Color"/>
                                 <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
@@ -228,6 +275,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nRm-6K-IB4"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KsD-LP-N6h">
+                                <rect key="frame" x="0.0" y="199" width="390" height="513"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" systemColor="systemGray6Color"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -426,6 +479,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -9,6 +9,8 @@ import UIKit
 
 class NotesViewController: UIViewController {
 
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var notesTableView: UITableView!
     @IBOutlet weak var addButtonView: UIView!
     
@@ -18,11 +20,19 @@ class NotesViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Notes".localized()
+        infoLabel.text = "Notes list is empty.".localized()
         
         setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if noteList.count > 0 {
+            self.infoView.isHidden = true
+        } else {
+            self.infoView.isHidden = false
+        }
+        
+        
         notesTableView.reloadData()
     }
     
@@ -71,6 +81,7 @@ class NotesViewController: UIViewController {
                 DispatchQueue.main.async {
                     noteList.removeAll()
                     self.notesTableView.reloadData()
+                    self.infoView.isHidden = false
                 }
             } catch {
                 print("could not delete")

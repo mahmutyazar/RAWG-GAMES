@@ -30,6 +30,8 @@
 "There is a problem. Try again later." = "Bir sorun var. Lütfen daha sonra tekrar deneyin.";
 "You can not see the details of games when you're offline. Please connect to internet." = "Internet bağlantınız olmadan oyun detaylarını göremezsiniz. Lütfen internete bağlanın.";
 "Seems like you're not connected to Internet. Please check your connection." = "Internet bağlantınızda sorun var.";
+"Favorites list is empty." = "Favori listesi boş.";
+"Notes list is empty." = "Notlar listesi boş.";
 
 
 

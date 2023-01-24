@@ -45,6 +45,8 @@ class FavoriteTableViewHelper: NSObject {
         do {
                 try Constants.context.execute(deleteRequest)
                 try Constants.context.save()
+            self.favoriteGames.removeAll()
+            self.tableView?.reloadData()
             } catch {
                 print ("There was an error")
             }
