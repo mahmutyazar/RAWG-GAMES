@@ -336,13 +336,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="websiteLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrU-uW-gnt">
-                                <rect key="frame" x="16" y="385" width="358" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rateLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz2-M6-nyi">
                                 <rect key="frame" x="204" y="347" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -377,6 +370,15 @@
                                     <action selector="favoriteButton:" destination="L3N-5E-6YZ" eventType="touchUpInside" id="OgQ-XF-aOq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLd-af-6Y1">
+                                <rect key="frame" x="16" y="395" width="348" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="websiteClicked:" destination="L3N-5E-6YZ" eventType="touchUpInside" id="qVA-qD-ucs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sh1-O9-YTL"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -388,7 +390,7 @@
                         <outlet property="descriptionTextView" destination="Pf9-69-tM8" id="XKc-yK-ij0"/>
                         <outlet property="detailImageView" destination="28y-O6-fLl" id="mrZ-Ju-Fy9"/>
                         <outlet property="rateLabel" destination="Nz2-M6-nyi" id="rGw-aN-buh"/>
-                        <outlet property="websiteLabel" destination="hrU-uW-gnt" id="Awg-bB-pW4"/>
+                        <outlet property="websiteButton" destination="eLd-af-6Y1" id="ZEs-02-PQd"/>
                         <outlet property="yearLabel" destination="mJc-dk-1SC" id="bTL-n4-qHv"/>
                     </connections>
                 </viewController>

@@ -8,12 +8,13 @@
 import UIKit
 import CoreData
 import Kingfisher
+import SafariServices
 
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var websiteLabel: UILabel!
+    @IBOutlet weak var websiteButton: UIButton!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -48,4 +49,15 @@ class DetailViewController: UIViewController {
             deleteFavoriteFromCoreData()
         }
     }
+    
+    @IBAction func websiteClicked(_ sender: Any) {
+        
+        if let url = URL(string: "\(favoriteGame?.website ?? "")") {
+            let safariVC = SFSafariViewController(url: url)
+            present(safariVC, animated: true)
+        }
+        
+    }
+    
+    
 }

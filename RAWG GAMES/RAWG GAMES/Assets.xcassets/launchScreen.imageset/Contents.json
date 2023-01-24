@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "sort-az.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "video-game-controller.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

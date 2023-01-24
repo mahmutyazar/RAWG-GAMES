@@ -45,7 +45,8 @@ extension DetailViewController {
             self?.detailImageView.kf.setImage(with: URL.init(string: item.backgroundImage ?? ""))
             let released = "Released: ".localized()
             self?.yearLabel.text = "\(released)\(item.released?.prefix(4).description ?? "")"
-            self?.websiteLabel.text = item.website ?? ""
+            self?.websiteButton.titleLabel?.text = item.website ?? ""
+            self?.websiteButton.setTitle("\(item.website ?? "rawg.io")", for: .normal)
             let rate = "Rate: ".localized()
             self?.rateLabel.text = "\(rate)\(item.rating)/\(item.ratingTop)"
             self?.descriptionTextView.text = item.descriptionRaw ?? ""
@@ -86,22 +87,23 @@ extension DetailViewController {
 
 extension DetailViewController: UNUserNotificationCenterDelegate {
     
-    func localNotification() { NotificationCenter.default.addObserver(self,
-                                                                      selector: #selector(newNoteSaved),
-                                                                      name: Notification.Name("NoteNotification"),
-                                                                      object: nil)
+    func localNotification() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(newNoteSaved),
+                                               name: Notification.Name("NoteNotification"),
+                                               object: nil)
     }
     
     @objc func newNoteSaved() {
+        
         let notificationManager: NotificationProtocol = LocalNotificationManager.shared
         notificationManager.sendNotification(title: "Success!".localized(),
                                              message: "You have been added this game to favorites!".localized())
     }
     
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
     {
         completionHandler([.sound, .banner, .badge, .list])
     }

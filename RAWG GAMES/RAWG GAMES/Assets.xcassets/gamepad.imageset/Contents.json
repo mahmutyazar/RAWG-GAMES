@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "gamepad.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "house.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
