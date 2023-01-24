@@ -16,7 +16,6 @@ class NotesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = .systemGray6
     }
     
 }

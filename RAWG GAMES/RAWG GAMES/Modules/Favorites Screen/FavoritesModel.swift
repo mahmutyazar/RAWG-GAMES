@@ -15,13 +15,13 @@ protocol FavoritesModelProtocol: AnyObject {
 }
 
 class FavoritesModel {
-        
+    
     private(set) var data: [FavoriteGame] = []
     
     weak var delegate: FavoritesModelProtocol?
     
-     func retrieveFavoritesFromCoreData() {
-         
+    func retrieveFavoritesFromCoreData() {
+        
         let request = NSFetchRequest<FavoriteGame>(entityName: "FavoriteGame")
         do {
             let result = try Constants.context.fetch(request)

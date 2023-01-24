@@ -72,9 +72,10 @@ class NotesTableViewHelper: NSObject {
     }
     
     private func setupTableView() {
-        tableView?.separatorStyle = .singleLine
+        tableView?.separatorStyle = .none
         tableView?.register(.init(nibName: "NotesTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableView?.dataSource = self
+        tableView?.keyboardDismissMode = .onDrag
     }
     
     func setItems(with items: [Notes]) {
@@ -106,7 +107,20 @@ extension NotesTableViewHelper: UITableViewDataSource {
         thisNote = nonDeletedNotes()[indexPath.row]
         cell.titleLabel.text = thisNote.title
         cell.descriptionLabel.text = thisNote.desc
+        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 15
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        let verticalPadding: CGFloat = 16
+
+        let maskLayer = CALayer()
+        maskLayer.cornerRadius = 15
+        maskLayer.backgroundColor = UIColor.black.cgColor
+        maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 8, dy: verticalPadding/2)
+        cell.layer.mask = maskLayer
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -127,3 +141,82 @@ extension NotesTableViewHelper: UITableViewDataSource {
 }
 
 
+//MARK: -  WARNING! This extension belong to NotesViewController, does not belong to NotesTableViewHelper that you're currently in.
+
+extension NotesViewController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if noteList.count > 0 {
+            self.infoView.isHidden = true
+        } else {
+            self.infoView.isHidden = false
+        }
+        
+        
+        notesTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editNote" {
+            
+            let indexPath = notesTableView.indexPathForSelectedRow!
+            let noteDetail = segue.destination as? NoteTakeViewController
+            let selectedNote: Notes!
+            
+            selectedNote = tableViewHelper.nonDeletedNotes()[indexPath.row]
+            noteDetail!.selectedNote = selectedNote
+            
+            notesTableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        addButtonView.layer.cornerRadius = addButtonView.layer.bounds.height/2
+        addButtonView.clipsToBounds = true
+    }
+    
+    func setupUI() {
+        tableViewHelper = .init(tableView: notesTableView, navigationController: navigationController!)
+        self.tableViewHelper.setItems(with: noteList)
+        self.notesTableView.delegate = self
+        notesTableView.reloadData()
+        
+    }
+    
+    func cleanNotes() {
+        
+        let alert = UIAlertController(title: "WARNING".localized(),
+                                      message: "All notes will be deleted. Are you sure?".localized(),
+                                      preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "DELETE".localized(),
+                                     style: UIAlertAction.Style.default) { [self] UIAlertAction in
+            do {
+                tableViewHelper.deleteAllRecords(entity: "Notes")
+                DispatchQueue.main.async {
+                    noteList.removeAll()
+                    self.notesTableView.reloadData()
+                    self.infoView.isHidden = false
+                }
+            } catch {
+                print("could not delete")
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "CANCEL".localized(),
+                                         style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
+    
+    func performSegue() {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "NoteTakeVC")
+        vc.modalPresentationStyle = .fullScreen
+        self.performSegue(withIdentifier: "toDetail", sender: self)
+    }
+}

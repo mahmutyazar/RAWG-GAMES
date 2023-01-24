@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Lottie
 
 class HomeTableViewHelper: NSObject {
     
@@ -44,8 +45,9 @@ class HomeTableViewHelper: NSObject {
         tableView?.dataSource = self
         tableView?.delegate = self
         searchBar?.delegate = self
+        tableView?.keyboardDismissMode = .onDrag
     }
-
+    
     func setItems(_ items: [RowItem]) {
         self.items = items
         self.searchResults = items
@@ -93,9 +95,22 @@ extension HomeTableViewHelper: UITableViewDataSource {
         } else {
             cell.configure(with: items[indexPath.row])
         }
-        cell.backgroundColor = .systemGray6
+        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 15
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        let verticalPadding: CGFloat = 8
+
+        let maskLayer = CALayer()
+        maskLayer.cornerRadius = 15
+        maskLayer.backgroundColor = UIColor.black.cgColor
+        maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 8, dy: verticalPadding/2)
+        cell.layer.mask = maskLayer
+    }
+    
 }
 
 
@@ -126,5 +141,56 @@ extension HomeTableViewHelper: UISearchBarDelegate {
         }
         pendingRequestWorkItem = requestWorkItem
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: requestWorkItem)
+    }
+}
+
+//MARK: -  WARNING! This extension belong to HomeViewController, does not belong to HomeTableViewHelper that you're currently in.
+
+extension HomeViewController {
+    
+    func sortTable() {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            items.sort(by: {$0.name < $1.name})
+            tableViewHelper.setItems(items)
+        case 1:
+            items.sort(by: {$0.rating > $1.rating })
+            tableViewHelper.setItems(items)
+        default:
+            print("error")
+        }
+        DispatchQueue.main.async {
+            self.homeTableView.reloadData()
+        }
+    }
+    
+    func setupUI() {
+        tableViewHelper = .init(tableView: (homeTableView), viewModel: viewModel, searchBar: searchBar, searchResults: searchResults, navigationController: navigationController!)
+    }
+    
+    func setupBindings() {
+        
+        viewModel.errorCaught = {[weak self] alert in
+            let alert = UIAlertController(title: "ALERT".localized(), message: alert, preferredStyle: .alert)
+            alert.addAction(.init(title: "OK".localized(), style: .default))
+            self?.present(alert, animated: true)
+        }
+        
+        viewModel.loadItems = {[weak self] items in
+            self?.tableViewHelper.setItems(items)
+            self!.animationView.stop()
+            self!.animationView.isHidden = true
+            self!.items = items
+        }
+    }
+    
+    func setupAnimation() {
+        animationView.animation = LottieAnimation.named("gaming")
+        animationView.frame = view.bounds
+        animationView.backgroundColor = .systemBackground
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        view.addSubview(animationView)
     }
 }

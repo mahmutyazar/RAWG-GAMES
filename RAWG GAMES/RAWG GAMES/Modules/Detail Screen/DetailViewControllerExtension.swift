@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+//MARK: -  WARNING! This extension belong to DetailViewController.
+
 extension DetailViewController {
     
     func saveFavoriteToCoreData(_ data: Game) {
@@ -53,6 +55,22 @@ extension DetailViewController {
         }
     }
     
+    func setupUI() {
+        
+        detailImageView.clipsToBounds = true
+        detailImageView.layer.cornerRadius = 8
+        descriptionTextView.clipsToBounds = true
+        descriptionTextView.layer.cornerRadius = 8
+        yearLabel.clipsToBounds = true
+        yearLabel.layer.cornerRadius = 8
+        rateLabel.clipsToBounds = true
+        rateLabel.layer.cornerRadius = 8
+        websiteButton.clipsToBounds = true
+        websiteButton.layer.cornerRadius = 8
+        
+        favoriteButton.layer.cornerRadius = favoriteButton.layer.bounds.height/2
+        favoriteButton.clipsToBounds = true
+    }
     
     func setButtonBackground(view: UIButton, on: UIImage, off: UIImage, onOffStatus: Bool) {
         switch onOffStatus {

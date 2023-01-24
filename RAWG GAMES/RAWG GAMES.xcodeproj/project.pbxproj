@@ -21,8 +21,9 @@
 		2A35073129754E4400435C28 /* HomeTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35073029754E4400435C28 /* HomeTableViewHelper.swift */; };
 		2A35073429754E5D00435C28 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35073229754E5D00435C28 /* HomeTableViewCell.swift */; };
 		2A35073529754E5D00435C28 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A35073329754E5D00435C28 /* HomeTableViewCell.xib */; };
+		2A4EA81E298067DA0066FE62 /* NoteTakeVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4EA81D298067DA0066FE62 /* NoteTakeVCExtension.swift */; };
 		2A7231C2297F2C3D00C0C800 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7231C1297F2C3D00C0C800 /* Localizer.swift */; };
-		2A7231C8297F49D800C0C800 /* DetailViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7231C7297F49D800C0C800 /* DetailViewControllerHelper.swift */; };
+		2A7231C8297F49D800C0C800 /* DetailViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7231C7297F49D800C0C800 /* DetailViewControllerExtension.swift */; };
 		2A8798F429749E3B00C44A56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F329749E3B00C44A56 /* AppDelegate.swift */; };
 		2A8798F629749E3B00C44A56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F529749E3B00C44A56 /* SceneDelegate.swift */; };
 		2A8798F829749E3B00C44A56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8798F729749E3B00C44A56 /* HomeViewController.swift */; };
@@ -77,10 +78,11 @@
 		2A35073029754E4400435C28 /* HomeTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewHelper.swift; sourceTree = "<group>"; };
 		2A35073229754E5D00435C28 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		2A35073329754E5D00435C28 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		2A4EA81D298067DA0066FE62 /* NoteTakeVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTakeVCExtension.swift; sourceTree = "<group>"; };
 		2A7231C1297F2C3D00C0C800 /* Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
 		2A7231C4297F2FF700C0C800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		2A7231C6297F2FFD00C0C800 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
-		2A7231C7297F49D800C0C800 /* DetailViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerHelper.swift; sourceTree = "<group>"; };
+		2A7231C7297F49D800C0C800 /* DetailViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerExtension.swift; sourceTree = "<group>"; };
 		2A8798F029749E3B00C44A56 /* RAWG GAMES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RAWG GAMES.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8798F329749E3B00C44A56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A8798F529749E3B00C44A56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -283,7 +285,7 @@
 				2AFE782F2976C25200F28365 /* DetailModel.swift */,
 				2AFE78332976D5C100F28365 /* DetailViewModel.swift */,
 				2A87992D2974A55600C44A56 /* DetailViewController.swift */,
-				2A7231C7297F49D800C0C800 /* DetailViewControllerHelper.swift */,
+				2A7231C7297F49D800C0C800 /* DetailViewControllerExtension.swift */,
 				2AFE78312976C9B700F28365 /* DetailService.swift */,
 			);
 			path = "Detail Screen";
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8799332974A5B100C44A56 /* NoteTakeViewController.swift */,
+				2A4EA81D298067DA0066FE62 /* NoteTakeVCExtension.swift */,
 			);
 			path = "Note Take Screen";
 			sourceTree = "<group>";
@@ -453,7 +456,7 @@
 				2A35071F29752EC600435C28 /* HomeModel.swift in Sources */,
 				2A35072129752EE900435C28 /* HomeViewModel.swift in Sources */,
 				2A35073129754E4400435C28 /* HomeTableViewHelper.swift in Sources */,
-				2A7231C8297F49D800C0C800 /* DetailViewControllerHelper.swift in Sources */,
+				2A7231C8297F49D800C0C800 /* DetailViewControllerExtension.swift in Sources */,
 				2A1507F1297B0D8000BAEDAE /* Constants.swift in Sources */,
 				2A87992E2974A55600C44A56 /* DetailViewController.swift in Sources */,
 				2A1B6623297DAB04007EA21E /* NotesTableViewCell.swift in Sources */,
@@ -469,6 +472,7 @@
 				2AFE78342976D5C100F28365 /* DetailViewModel.swift in Sources */,
 				2ACA4975297AC1F800878CA9 /* FavoritesViewModel.swift in Sources */,
 				2AABD9B1297D484700F34DE2 /* NotesTableViewHelper.swift in Sources */,
+				2A4EA81E298067DA0066FE62 /* NoteTakeVCExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

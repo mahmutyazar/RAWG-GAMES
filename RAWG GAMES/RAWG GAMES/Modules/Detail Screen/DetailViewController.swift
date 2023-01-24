@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var websiteButton: UIButton!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     var viewModel: DetailViewModel?
     var isFavorite: Bool = false
@@ -25,10 +26,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailImageView.clipsToBounds = true
-        detailImageView.layer.cornerRadius = 15
-        descriptionTextView.backgroundColor = .systemGray6
-        
+        setupUI()
         setupBindings()
         viewModel?.didViewLoad()
     }
@@ -37,14 +35,16 @@ class DetailViewController: UIViewController {
         
         isFavorite.toggle()
         
-        setButtonBackground(view: sender, on: UIImage(systemName: "heart.fill")!, off: UIImage(systemName: "heart")!, onOffStatus: isFavorite)
+        setButtonBackground(view: sender, on: UIImage(systemName: "heart.fill")!,
+                            off: UIImage(systemName: "heart")!,
+                            onOffStatus: isFavorite)
         
         if isFavorite == true {
             localNotification()
             UNUserNotificationCenter.current().delegate = self
             saveFavoriteToCoreData(favoriteGame!)
-            NotificationCenter.default.post(name: Notification.Name("NoteNotification"), object: nil)
-            
+            NotificationCenter.default.post(name: Notification.Name("NoteNotification"),
+                                            object: nil)
         } else {
             deleteFavoriteFromCoreData()
         }
@@ -56,8 +56,5 @@ class DetailViewController: UIViewController {
             let safariVC = SFSafariViewController(url: url)
             present(safariVC, animated: true)
         }
-        
     }
-    
-    
 }

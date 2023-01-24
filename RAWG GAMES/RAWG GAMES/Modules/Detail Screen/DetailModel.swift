@@ -41,11 +41,9 @@ class DetailModel {
                 }
                 self.detailData = response
                 self.delegate?.didDetailDataFetch()
-            
-                
             }
         } else {
-                //retrieve from CoreData
+            //retrieve from CoreData
         }
     }
 }

@@ -36,7 +36,7 @@ struct Result: Codable {
     let rating: Double?
     let ratingTop: Int?
     let genres: [Genre]?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, slug, name, released
         case backgroundImage = "background_image"

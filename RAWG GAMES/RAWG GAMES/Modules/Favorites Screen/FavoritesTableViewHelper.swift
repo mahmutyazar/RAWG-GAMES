@@ -29,6 +29,7 @@ class FavoriteTableViewHelper: NSObject {
         tableView?.register(.init(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableView?.dataSource = self
         tableView?.delegate = self
+        tableView?.keyboardDismissMode = .onDrag
     }
     
     func setItems(with items: [FavoriteGame]) {
@@ -41,16 +42,16 @@ class FavoriteTableViewHelper: NSObject {
         
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
-            
+        
         do {
-                try Constants.context.execute(deleteRequest)
-                try Constants.context.save()
+            try Constants.context.execute(deleteRequest)
+            try Constants.context.save()
             self.favoriteGames.removeAll()
             self.tableView?.reloadData()
-            } catch {
-                print ("There was an error")
-            }
+        } catch {
+            print ("There was an error")
         }
+    }
 }
 
 extension FavoriteTableViewHelper: UITableViewDelegate {
@@ -81,7 +82,6 @@ extension FavoriteTableViewHelper: UITableViewDataSource {
         cell.gameImageView.kf.setImage(with: URL.init(string: favoriteGames[indexPath.row].imageURL ?? ""))
         cell.releasedLabel.text = favoriteGames[indexPath.row].released!.prefix(4).description
         cell.ratingLabel.text = "\(favoriteGames[indexPath.row].rating)/\(favoriteGames[indexPath.row].ratingTop)"
-        cell.backgroundColor = .systemGray6
         return cell
     }
     
@@ -98,5 +98,86 @@ extension FavoriteTableViewHelper: UITableViewDataSource {
                 print("could not delete")
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        let verticalPadding: CGFloat = 8
+        
+        let maskLayer = CALayer()
+        maskLayer.cornerRadius = 15
+        maskLayer.backgroundColor = UIColor.black.cgColor
+        maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 8, dy: verticalPadding/2)
+        cell.layer.mask = maskLayer
+    }
+}
+
+//MARK: -  WARNING! This extension belong to FavoritesViewController, does not belong to FavoriteTableViewHelper that you're currently in.
+
+extension FavoritesViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        viewModel.didViewLoad()
+        favoritesTableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if favoriteGames.count > 0 {
+            self.favoritesView.isHidden = true
+        } else {
+            self.favoritesView.isHidden = false
+        }
+    }
+    
+    func setupUI() {
+        
+        tableViewHelper = .init(tableView: favoritesTableView,
+                                navigationController: navigationController!)
+    }
+    
+    func setupBindings() {
+        viewModel.errorCaught = {[weak self] alert in
+            let alert = UIAlertController(title: "ALERT".localized(),
+                                          message: alert, preferredStyle: .alert)
+            
+            alert.addAction(.init(title: "OK".localized(),
+                                  
+                                  style: .default))
+            self?.present(alert, animated: true)
+        }
+        
+        viewModel.loadItems = { [weak self] favorites in
+            self?.tableViewHelper.setItems(with: favorites)
+            self?.favoriteGames = favorites
+        }
+    }
+    
+    
+    func cleanFavorites() {
+        
+        let alert = UIAlertController(title: "WARNING".localized(),
+                                      message: "Are you sure to delete all favorites?".localized(),
+                                      preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "DELETE".localized(),
+                                     style: UIAlertAction.Style.default) { [self] UIAlertAction in
+            do {
+                tableViewHelper.deleteAllRecords(entity: "FavoriteGame")
+                self.favoriteGames.removeAll()
+                self.favoritesTableView?.reloadData()
+                favoritesView.isHidden = false
+            } catch {
+                print("could not delete")
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "CANCEL".localized(),
+                                         style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
     }
 }

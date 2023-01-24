@@ -17,7 +17,7 @@ protocol HomeModelProtocol: AnyObject {
 }
 
 class HomeModel {
-        
+    
     private(set) var data: [Result] = []
     private(set) var cacheData: [MainGameList] = []
     private let randomInt = Int.random(in: 1..<99)
@@ -25,7 +25,7 @@ class HomeModel {
     weak var delegate: HomeModelProtocol?
     
     func fetchData() {
-    
+        
         if InternetManager.shared.isInternetActive() {
             AF.request("\(Constants.sharedURL)?key=\(Constants.apiKey)&page=\(randomInt)&page_size=40").responseDecodable(of: ApiGame.self) { game in
                 guard let response = game.value else {
@@ -45,7 +45,7 @@ class HomeModel {
             retrieveFromCoreData()
         }
     }
-
+    
     func saveToCoreData(_ data: Result) {
         
         let context = Constants.appDelegate.persistentContainer.viewContext
@@ -68,7 +68,7 @@ class HomeModel {
     }
     
     func retrieveFromCoreData() {
-
+        
         let request = NSFetchRequest<MainGameList>(entityName: "MainGameList")
         
         do {
