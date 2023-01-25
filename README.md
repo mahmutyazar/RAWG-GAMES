@@ -3,7 +3,7 @@
 
 This application has been developed as final project of **Simpra iOS Swift Bootcamp** that carried out by [patika.dev](patika.dev) platform on December 2022 - January 2023.
 
-<kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/1.png" width="150" height="330"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/2.png" width="150" height="330"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/3.png" width="150" height="330"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/4.png" width="150" height="330"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/5.png" width="150" height="330"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/6.png" width="150" height="330"/></kbd>
+<kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/1.png" width="160" height="345"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/2.png" width="160" height="345"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/3.png" width="160" height="345"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/4.png" width="160" height="345"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/5.png" width="160" height="345"/></kbd> <kbd><img src="https://github.com/mahmutyazar/RAWG-GAMES/blob/main/Images/6.png" width="160" height="345"/></kbd>
 
 ### TECHNICAL FEATURES
 
