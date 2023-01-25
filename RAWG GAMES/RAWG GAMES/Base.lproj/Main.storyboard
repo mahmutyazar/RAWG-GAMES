@@ -97,13 +97,12 @@
         <scene sceneID="PHw-yp-1ob">
             <objects>
                 <viewController id="D6N-qe-hph" customClass="NotesViewController" customModule="RAWG_GAMES" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="jbf-jE-GPR">
+                    <view key="view" contentMode="scaleToFill" id="jbf-jE-GPR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PYi-X5-ceO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PYi-X5-ceO">
                                 <rect key="frame" x="0.0" y="91" width="390" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -119,7 +118,6 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="7MD-c1-UcB"/>
                                     <constraint firstAttribute="width" constant="350" id="Ret-MS-lrW"/>
                                     <constraint firstItem="LvG-MO-DVw" firstAttribute="leading" secondItem="ZBg-n0-APx" secondAttribute="leading" constant="86" id="S3s-cn-F7q"/>
                                     <constraint firstItem="LvG-MO-DVw" firstAttribute="top" secondItem="ZBg-n0-APx" secondAttribute="top" constant="50" id="UHp-S1-44R"/>
@@ -158,8 +156,11 @@
                         <viewLayoutGuide key="safeArea" id="DZS-2A-9Be"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="h1T-Ph-ySh" firstAttribute="top" secondItem="ZBg-n0-APx" secondAttribute="bottom" constant="150" id="Jek-nz-Q9n"/>
-                            <constraint firstItem="ZBg-n0-APx" firstAttribute="centerY" secondItem="jbf-jE-GPR" secondAttribute="centerY" id="jnZ-To-RSA"/>
+                            <constraint firstItem="PYi-X5-ceO" firstAttribute="leading" secondItem="DZS-2A-9Be" secondAttribute="leading" id="5YY-Lp-FZl"/>
+                            <constraint firstItem="PYi-X5-ceO" firstAttribute="bottom" secondItem="DZS-2A-9Be" secondAttribute="bottom" id="AeV-FS-yDP"/>
+                            <constraint firstItem="ZBg-n0-APx" firstAttribute="centerX" secondItem="PYi-X5-ceO" secondAttribute="centerX" id="Ft3-2i-oVv"/>
+                            <constraint firstItem="ZBg-n0-APx" firstAttribute="top" secondItem="DZS-2A-9Be" secondAttribute="top" constant="220" id="hhW-Pu-lEs"/>
+                            <constraint firstItem="PYi-X5-ceO" firstAttribute="top" secondItem="jbf-jE-GPR" secondAttribute="topMargin" constant="-52" id="ocI-ij-RCr"/>
                             <constraint firstItem="ZBg-n0-APx" firstAttribute="centerX" secondItem="jbf-jE-GPR" secondAttribute="centerX" id="zAG-to-v7u"/>
                         </constraints>
                     </view>
@@ -437,10 +438,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLd-af-6Y1">
                                 <rect key="frame" x="54" y="344" width="316" height="25"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="K7a-oZ-mi3"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="mlb-hB-kSt"/>
-                                </constraints>
                                 <color key="tintColor" systemColor="systemCyanColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -464,10 +461,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2z-kR-Lw9">
-                                <rect key="frame" x="315" y="219" width="40" height="40"/>
+                                <rect key="frame" x="304.33333333333331" y="219" width="50.666666666666686" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8td-2v-jFB"/>
-                                    <constraint firstAttribute="width" constant="40" id="Wsq-Gr-Lle"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
