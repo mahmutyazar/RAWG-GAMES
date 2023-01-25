@@ -1,0 +1,40 @@
+/* 
+ Localizable.strings
+ RAWG GAMES
+ 
+ Created by Mahmut Yazar on 21.01.2023.
+ 
+ */
+
+"Random Games" = "Rastgele Oyunlar";
+"Favorites" = "Favorilerim";
+"Notes" = "Notlarım";
+"Title" = "Başlık";
+"Description" = "Yorum";
+"Save" = "Kaydet";
+"Insert title" = "Başlık yazın";
+"You should fill all the blanks." = "Tüm boşlukları doldurmalısınız.";
+"Search whatever you looking for..." = "Herhangi bir şey arayın...";
+"RATE" = "PUAN";
+"Released: " = "Yılı: ";
+"Rate: " = "Puan: ";
+"ALERT" = "UYARI";
+"OK" = "TAMAM";
+"WARNING" = "DİKKAT!";
+"DELETE" = "SİL";
+"CANCEL" = "İPTAL";
+"Success!" = "Başarılı!";
+"All notes will be deleted. Are you sure?" = "Tüm notlar silinecek. Emin misiniz?";
+"Are you sure to delete all favorites?" = "Tüm favorileri silmek istediğinize emin misiniz?";
+"You have been added this game to favorites!" = "Bu oyunu favorilerinize eklediniz!";
+"There is a problem. Try again later." = "Bir sorun var. Lütfen daha sonra tekrar deneyin.";
+"You can not see the details of games when you're offline. Please connect to internet." = "Internet bağlantınız olmadan oyun detaylarını göremezsiniz. Lütfen internete bağlanın.";
+"Seems like you're not connected to Internet. Please check your connection." = "Internet bağlantınızda sorun var.";
+"Favorites list is empty." = "Favori listesi boş.";
+"Notes list is empty." = "Notlar listesi boş.";
+
+
+
+
+
+

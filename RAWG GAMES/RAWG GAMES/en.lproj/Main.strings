@@ -1,0 +1,60 @@
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "5kS-zK-Dmu"; */
+"5kS-zK-Dmu.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "HomeTitle"; ObjectID = "CQP-pa-DQP"; */
+"CQP-pa-DQP.title" = "HomeTitle";
+
+/* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "E1K-f1-0k4"; */
+"E1K-f1-0k4.title" = "Favorites";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "GGO-Wh-4nU"; */
+"GGO-Wh-4nU.text" = "Description";
+
+/* Class = "UISearchBar"; placeholder = "Search whatever you looking for..."; ObjectID = "IA6-7Y-2KC"; */
+"IA6-7Y-2KC.placeholder" = "Search whatever you looking for...";
+
+/* Class = "UITabBarItem"; title = "Notes"; ObjectID = "IIH-Yk-NAh"; */
+"IIH-Yk-NAh.title" = "Notes";
+
+/* Class = "UINavigationItem"; title = "Favorites"; ObjectID = "Mrs-5q-FDt"; */
+"Mrs-5q-FDt.title" = "Favorites";
+
+/* Class = "UILabel"; text = "rateLabel"; ObjectID = "Nz2-M6-nyi"; */
+"Nz2-M6-nyi.text" = "rateLabel";
+
+/* Class = "UITextView"; text = "Description raw"; ObjectID = "Pf9-69-tM8"; */
+"Pf9-69-tM8.text" = "Description raw";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "R2z-kR-Lw9"; */
+"R2z-kR-Lw9.normalTitle" = "Button";
+
+/* Class = "UIBarButtonItem"; title = "Delete All Favorites"; ObjectID = "WZL-XW-4jD"; */
+"WZL-XW-4jD.title" = "Delete All Favorites";
+
+/* Class = "UINavigationItem"; title = "Notes"; ObjectID = "eYe-dn-mk5"; */
+"eYe-dn-mk5.title" = "Notes";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "hOD-x0-eBd"; */
+"hOD-x0-eBd.title" = "Home";
+
+/* Class = "UILabel"; text = "websiteLabel"; ObjectID = "hrU-uW-gnt"; */
+"hrU-uW-gnt.text" = "websiteLabel";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "iVf-qC-Djy"; */
+"iVf-qC-Djy.text" = "Label";
+
+/* Class = "UISegmentedControl"; juY-Ge-bp6.segmentTitles[0] = "A-Z"; ObjectID = "juY-Ge-bp6"; */
+"juY-Ge-bp6.segmentTitles[0]" = "A-Z";
+
+/* Class = "UISegmentedControl"; juY-Ge-bp6.segmentTitles[1] = "RATE"; ObjectID = "juY-Ge-bp6"; */
+"juY-Ge-bp6.segmentTitles[1]" = "RATE";
+
+/* Class = "UILabel"; text = "yearLabel"; ObjectID = "mJc-dk-1SC"; */
+"mJc-dk-1SC.text" = "yearLabel";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "rcj-AZ-wNS"; */
+"rcj-AZ-wNS.text" = "Title";
+
+/* Class = "UITextField"; placeholder = "Insert title"; ObjectID = "xVo-oX-NSH"; */
+"xVo-oX-NSH.placeholder" = "Insert title";
